@@ -1,0 +1,38 @@
+Arguments: 
+  /home/angelou/.nvm/versions/node/v12.14.1/bin/node /usr/local/bin/yarn slate migrate
+
+PATH: 
+  /home/angelou/.nvm/versions/node/v12.14.1/bin:/home/angelou/.composer/vendor/bin:/home/angelou/.config/composer/vendor/bin:/home/angelou/.local/bin:/home/angelou/.composer/vendor/bin:/home/angelou/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/angelou/.composer/vendor/bin:/home/angelou/.composer/vendor/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.14.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/angelou/Desktop/builds/shopify/st-albans/package.json: Unexpected token : in JSON at position 9
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  "scripts": {
+    "watch": "slate watch",
+    "start:dev": "slate start --env development",
+    "start:prod": "slate start --env production",
+    "deploy:dev": "slate deploy --env development",
+    "deploy:prod": "slate deploy --env production",
+    "build": "slate build"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
