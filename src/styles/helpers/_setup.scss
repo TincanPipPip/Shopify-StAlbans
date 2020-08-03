@@ -1,0 +1,284 @@
+/* --- Include setup files --- */
+@import 'include-media';
+
+// --------------------------------
+//					   		  SETUP
+// --------------------------------
+
+// Set global row max-width for design
+.row {
+  max-width: 1350px;
+}
+
+/* --- Mixins --- */
+
+// Reset <li> elements
+@mixin li-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Remove text from elements
+@mixin rm-text {
+  text-align: left;
+  text-indent: -9999px;
+}
+
+// Remove li bottom margin
+@mixin li-margin($columns, $marginBottom) {
+  &:nth-last-child(-n + #{$columns}):nth-child(#{$columns}n + 1),
+  &:nth-last-child(-n + #{$columns}):nth-child(#{$columns}n + 1) ~ li {
+    margin-bottom: $marginBottom;
+  }
+}
+
+// Centered background images
+@mixin bg-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// IE 9+ only
+@mixin ie($property, $value) {
+  @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin caps {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+@mixin btn {
+  @include caps;
+  border: 1px solid $purple;
+  padding: 18px 0 18px 25px;
+  display: inline-block;
+  color: $purple;
+  line-height: 1;
+
+  &::before,
+  &::after {
+    content: ' ';
+    transition: all 0.2s ease-out;
+  }
+
+  span {
+    @include bg-img;
+    display: inline-block;
+    background-image: url('../images/arrow-purple.svg');
+    height: 10px;
+    width: 15px;
+    margin: 0 15px 0 10px;
+  }
+
+  &:hover {
+    background: $purple;
+    color: #fff;
+
+    span {
+      background-image: url('../images/arrow-white.svg');
+    }
+  }
+}
+
+@mixin btn-book {
+  @include btn;
+  border-color: $tan;
+  background: $tan;
+  color: #fff;
+  position: relative;
+  height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 50px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    right: -14.5px;
+  }
+
+  &::before {
+    top: -1px;
+    height: 38px;
+    width: 14.5px;
+    background: $tan;
+  }
+
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    bottom: -1px;
+    border-style: solid;
+    border-width: 14.5px 14.5px 0 0;
+    border-color: $tan transparent transparent transparent;
+  }
+
+  span {
+    background-image: url('../images/arrow-white.svg');
+    margin-left: 15px;
+  }
+
+  &:hover {
+    background: $gold;
+    border-color: $gold;
+
+    &::before {
+      background: $gold;
+    }
+
+    &::after {
+      border-color: $gold transparent transparent transparent;
+    }
+  }
+}
+
+@mixin btn-alt {
+  @include btn;
+  border-color: $tan;
+  color: $tan;
+
+  span {
+    background-image: url('../images/arrow-gold.svg');
+  }
+
+  &:hover {
+    background: $gold;
+    color: #fff;
+    border-color: $gold;
+
+    span {
+      background-image: url('../images/arrow-white.svg');
+    }
+  }
+}
+
+@mixin bord {
+  content: ' ';
+  display: block;
+  height: 5px;
+  width: 100px;
+  background: $purple;
+  opacity: 0.1;
+}
+
+@mixin tri {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  z-index: 3;
+  border-style: solid;
+  border-width: 0 100px 100px 0;
+  border-color: transparent $bg-alt transparent transparent;
+
+  @include media('<tabletland') {
+    border-width: 0 70px 70px 0;
+  }
+}
+
+@mixin venue-copy {
+  @include bg-img;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 18px;
+  line-height: 20px;
+  background-image: url('../images/marker-beige-sm.svg');
+  background-position: left center;
+  background-size: 10px;
+  padding-left: $padding/2;
+  color: #777;
+  display: block;
+  margin-bottom: $padding/3;
+}
+
+/* --- Variables --- */
+$text: #7d7a89;
+$bg: #fafafb;
+$bg-alt: #e8e6eb;
+
+$gold: #84603f;
+$tan: #a88f78;
+$beige: #c1af9e;
+$beige-lt: #cdbfb2;
+$purple: #18073a;
+$lilac: #a7a1b3;
+$grey: #a9a3b6;
+$grey-lt: #fafafa;
+$black: #151524;
+
+$padding: 30px;
+
+// padding used in foundation
+$bump: 0.9375em;
+
+/* --- Fonts --- */
+
+@font-face {
+  font-family: 'KfrW-Rg';
+  src: url('../fonts/kfrw-rg.eot');
+  src: url('../fonts/kfrw-rg.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-rg.woff2') format('woff2'), url('../fonts/kfrw-v.woff') format('woff'),
+    url('../fonts/kfrw-rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KfrW-Bd';
+  src: url('../fonts/kfrw-bd.eot');
+  src: url('../fonts/kfrw-bd.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-bd.woff2') format('woff2'),
+    url('../fonts/kfrw-bd.woff') format('woff'), url('../fonts/kfrw-bd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font-body {
+  font-size: 19px;
+  line-height: 32px;
+  font-family: 'KfrW-Rg';
+  font-feature-settings: 'lnum';
+}
+
+@mixin font-bold {
+  font-weight: normal;
+  font-family: 'KfrW-Bd';
+}
+
+@mixin font-title {
+  font-weight: 400;
+}
+
+/* --- Media queries --- */
+
+//	USAGE:
+//
+//	@include media(">tabletland", "<=1150px") {
+//		font-size:4.0rem;
+//	}
+//
+//	@include media("<mobile") {
+//		width:100%;
+//	}
+
+$breakpoints: (
+  vsmall: 390px,
+  small: 480px,
+  mobile: 768px,
+  tabletport: 800px,
+  tabletland: 1025px,
+  nav: 1130px,
+);
