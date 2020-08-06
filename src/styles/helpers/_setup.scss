@@ -1,5 +1,5 @@
 /* --- Include setup files --- */
-@import 'include-media';
+@import '_media-query.scss';
 
 // --------------------------------
 //					   		  SETUP
@@ -186,7 +186,7 @@
   border-width: 0 100px 100px 0;
   border-color: transparent $bg-alt transparent transparent;
 
-  @include media('<tabletland') {
+  @include media-query($tabletland) {
     border-width: 0 70px 70px 0;
   }
 }
@@ -274,11 +274,89 @@ $bump: 0.9375em;
 //		width:100%;
 //	}
 
-$breakpoints: (
-  vsmall: 390px,
-  small: 480px,
-  mobile: 768px,
-  tabletport: 800px,
-  tabletland: 1025px,
-  nav: 1130px,
+/* had to disable the below for shopify sass compatibility purposes */
+// $breakpoints: (
+//   vsmall: 390px,
+//   small: 480px,
+//   mobile: 768px,
+//   tabletport: 800px,
+//   tabletland: 1025px,
+//   nav: 1130px,
+// );
+
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1400px;
+$grid-gutter: 30px;
+$grid-gutter-mobile: 22px;
+
+$grid-vsmall: 390px;
+$grid-small: 480px;
+$grid-sm-mobile: 550px;
+$grid-mobile: 768px;
+$grid-tabletport: 800px;
+$grid-tabletland: 1025px;
+$grid-nav: 1130px;
+$grid-wide: 1366px;
+$grid-wider: 1450px;
+$grid-xwide: 1500px;
+
+$vsmall: 'vsmall';
+$small: 'small';
+$sm-mobile: 'sm-mobile';
+$mobile: 'mobile';
+$tabletport: 'tabletport';
+$tabletland: 'tabletland';
+$nav: 'nav';
+$wide: 'wide';
+$wider: 'wider';
+$xwide: 'xwide';
+$xxwide: '$xxwide';
+
+// $small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $grid-breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+==============================================================================*/
+$grid-breakpoint-has-widths: ($small, $medium-up);
+$grid-breakpoint-has-push: ($small, $medium-up);
+
+
+/*============================================================================
+  #Grid
+==============================================================================*/
+
+// The `$grid-breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+$grid-breakpoints: (
+  // $small '(max-width: #{$grid-medium - 1})',
+  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+  $medium-down '(max-width: #{$grid-large - 1})',
+  $medium-up '(min-width: #{$grid-medium})',
+  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+  $large-down '(max-width: #{$grid-widescreen - 1})',
+  $large-up '(min-width: #{$grid-large})',
+  $widescreen '(min-width: #{$grid-widescreen})',
+
+  $vsmall '(max-width: #{$grid-vsmall - 1})',
+  $small '(max-width: #{$grid-small - 1})',
+  $sm-mobile '(max-width: #{$grid-sm-mobile - 1})',
+  $mobile '(max-width: #{$grid-mobile - 1})',
+  $tabletport '(max-width: #{$grid-tabletport - 1})',
+  $tabletland '(max-width: #{$grid-tabletland - 1})',
+  $nav '(max-width: #{$grid-nav - 1})',
+  $wide '(max-width: #{$grid-wide - 1})',
+  $wider '(max-width: #{$grid-wider - 1})',
+  $xwide '(max-width: #{$grid-xwide - 1})',
+  $xxwide '(min-width: #{$grid-xwide - 1})'
 );
+  

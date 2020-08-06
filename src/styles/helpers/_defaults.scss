@@ -83,7 +83,7 @@
   display: none !important;
 }
 
-@include media('<mobile') {
+@include media-query($mobile) {
   .hide-for-mobile {
     display: none !important;
   }
@@ -203,7 +203,7 @@ input[type='submit'] {
   }
 }
 
-@include media('<mobile') {
+@include media-query($mobile) {
   .three-col {
     li {
       width: 47%;
@@ -218,7 +218,7 @@ input[type='submit'] {
   }
 }
 
-@include media('<=small') {
+@include media-query($small) {
   // By default everything to 1 col
   .two-col,
   .three-col,
