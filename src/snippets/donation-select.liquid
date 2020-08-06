@@ -1,0 +1,191 @@
+<strong>Add a donation</strong>
+<p class="line-item-property__field">
+  <label>Help to fund the Museum's work by adding a donation to your order</label><br>
+  <select id="suggested-donation">
+    <option value="0">£0</option>
+    <option value="3">£3</option>
+    <option value="5">£5</option>
+    <option value="10">£10</option>
+    <option value="20">£20</option>
+    <option value="50">£50</option>
+  </select>
+</p>
+
+<div>
+  <strong>Gift Aid</strong>
+  <p><strong>Boost your donation by 25p of Gift Aid for every £1 you donate. </strong></p>
+  <p><input type="checkbox" id="giftaid-today"/> <label class="inline" for="giftaid-today">Yes, I am a UK taxpayer and I would like the Museum to treat all the donations I make from 1 April 2011, until I notify you otherwise, as Gift Aid donations.</label></p>  
+  <p id="taxstatement"><small>I confirm I have paid or will pay an amount of Income Tax and/or Capital Gains Tax for each tax year (6 April to 5 April) that is at least equal to the amount of tax that all the charities or Community Amateur Sports Clubs (CASCs) that I donate to will reclaim on my gifts for that tax year. I understand that other taxes such as VAT and Council Tax do not qualify. I understand the charity will reclaim 28p of tax on every £1 that I gave up to 5 April 2008 and will reclaim 25p of tax on every £1 that I give on or after 6 April 2008.</small></p>
+</div>
+
+<script>
+
+  // Define donation product variation IDs
+  var three = 35464486289561, 
+      five = 35464486322329,
+      ten = 35464486355097,
+      twenty = 35464486387865,
+      fifty = 35464486420633;
+
+  jQuery(document).ready(function () {
+    
+    // Remove donation items from cart
+    function removeItem(item_id) {
+
+      var params = {
+        type: 'POST',
+        async: false,
+        url: '/cart/update.js',
+        data: 'updates['+ item_id +']=0',
+        dataType: 'json',
+        success: function(line_item) { 
+          console.log('removed item id ' + item_id);          
+        },
+        error: function() {
+          console.log("failed to remove donation from cart");
+        }
+      };
+      jQuery.ajax(params);
+    }
+    
+    // Need to add this hack for displaying Gift Aid under Donation product
+       
+    $("#giftaid-today").change(function() {
+      if (this.checked) {
+        jQuery.getJSON('/cart.js', function (cart, textStatus) {
+          if (cart.items.length) {
+
+            cart.items.forEach(function(item){
+              if (item.id == three || item.id == five || item.id == ten || item.id == twenty || item.id == fifty) {
+
+                removeItem(item.id);	// Remove if in cart already - Shopify doesn't allow changing line item props
+
+                // Re-add item with property updated
+                var params = {
+                  type: 'POST',
+                  url: '/cart/add.js',
+                  async: false,
+                  data: 'quantity=1&id='+item.id+'&properties[Include Gift Aid made on donations]=Yes',
+                  dataType: 'json',
+                  success: function(line_item) { 
+                    //Donation added to cart            
+                  },
+                  error: function() {
+                    console.log("failed to add donation to cart");
+                  },
+
+                };
+
+                jQuery.ajax(params);                
+
+              }
+            });
+          }
+        });
+      }
+    });
+    
+    
+    
+    jQuery('select#suggested-donation').change(function() {
+
+      var selected = $(this).val();
+
+      console.log(selected);
+      
+      if (selected === '3') {
+        var id = three;
+        addDonation();
+      }
+      else if (selected == '5') {
+        var id = five;
+        addDonation();
+      }
+      else if (selected == '10') {
+        var id = ten;
+        addDonation();
+      }
+      else if (selected == '20') {
+        var id = twenty;
+        addDonation();
+      }
+      else if (selected == '50') {
+        var id = fifty;
+        addDonation();
+      }
+      else {
+        return false;  
+      }
+
+      function addDonation(){
+
+        checkDonation(); // Check if donation is in cart already
+
+        //var params = {
+        //  type: 'POST',
+        //  url: '/cart/add.js',
+        //  async: false,
+        //  data: 'quantity=1&id='+id,
+        //  dataType: 'json',
+        //  success: function(line_item) { 
+            // Donation added to cart            
+        //  },
+        //  error: function() {
+        //    console.log("failed to add donation to cart");
+        //  },
+        //  properties: {
+        //  	'hi': 'there'
+        //  }
+        //};
+        
+        var giftAid;
+        
+        if ( $('#giftaid-today').is(':checked')) {
+          giftAid = 'Yes';
+        }
+        else {
+          giftAid = 'No'; 
+        }
+        
+        jQuery.post('/cart/add.js', {
+          quantity: 1,
+          id: id,
+          properties: {
+            'Include Gift Aid made on donations':  giftAid  
+          }          
+        });
+
+        
+        //console.log(params);
+        //$.ajax(params);
+      }
+
+      function checkDonation() {
+        // Check if donation is already added to cart       
+        var params = {
+          type: 'GET',
+          url: '/cart.js',
+          async: false,
+          dataType: 'json',
+          success: function(cart_data) {
+            if (cart_data.items.length) {
+              cart_data.items.forEach(function(item){
+                if (item.id == three || item.id == five || item.id == ten || item.id == twenty || item.id == fifty) {
+                  removeItem(item.id);	// Remove if in cart already 
+                }
+              });
+            }
+          },
+          error: function() {
+            console.log("failed to retrieve cart data");
+          }
+        };
+        jQuery.ajax(params); 
+      }
+
+      
+
+
+    });
+  });
+</script>

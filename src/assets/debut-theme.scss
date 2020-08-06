@@ -490,7 +490,7 @@
   $z-index-skip-to-content: 10000; // really high to be safe of app markup
   
   /*================ SVG ================*/
-  $svg-select-icon: #{'//cdn.shopify.com/s/files/1/0432/6372/1625/t/1/assets/ico-select.svg?v=2900367270910467858'};
+  $svg-select-icon: #{'//cdn.shopify.com/s/files/1/0418/3080/9751/t/1/assets/ico-select.svg?v=2900367270910467858'};
   
   /*================ Drawers ================*/
   $transition-drawer: all $transition-duration-slow cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -505,53 +505,53 @@
   
   
   @font-face {
-  font-family: Helvetica;
-  font-weight: 700;
-  font-style: normal;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
-}
-
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
+  }
+  
   @font-face {
-  font-family: Helvetica;
-  font-weight: 400;
-  font-style: normal;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2?&hmac=64c57d7fee8da8223a0d4856285068c02c248ef210cae57dcd9c3e633375e8a4") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?&hmac=f74109e3105603c8a8cfbd8dec4e8a7e53572346fb96aacec203fc3881ddabf1") format("woff");
-}
-
-@font-face {
-  font-family: Helvetica;
-  font-weight: 700;
-  font-style: normal;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
-}
-
+    font-family: Helvetica;
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2?&hmac=64c57d7fee8da8223a0d4856285068c02c248ef210cae57dcd9c3e633375e8a4") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?&hmac=f74109e3105603c8a8cfbd8dec4e8a7e53572346fb96aacec203fc3881ddabf1") format("woff");
+  }
+  
   @font-face {
-  font-family: Helvetica;
-  font-weight: 700;
-  font-style: normal;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
-}
-
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
+  }
+  
   @font-face {
-  font-family: Helvetica;
-  font-weight: 400;
-  font-style: oblique;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.f9832a0fc1ee8fc5a359636e410d6941e1e4ca03.woff2?&hmac=775a8a34e13ea386c331d51fd5f061993cd3135ce54cc4ed2b9254f3a3be05df") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.0063286aec443697ebae04eeb9c78b820f9f7805.woff?&hmac=32c2cf4f29cdfb274d76aeb45a9a8b5c97eb6a9255cc2073ee5c1a85140ad7fe") format("woff");
-}
-
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b") format("woff");
+  }
+  
   @font-face {
-  font-family: Helvetica;
-  font-weight: 700;
-  font-style: oblique;
-  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.215fd4ca1a06214fa01e44328a1992c977700ea2.woff2?&hmac=b7d9523eaf6b1e57f158595303d5e41e66c07d43212d2fbfe8df1f4b7d6c1f79") format("woff2"),
-       url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.b0a2026ae2aa64d060f9ce0ee1b3c3c1aa21bf88.woff?&hmac=97dc9f03549c58cc74feee46ffde68daa822080823ae1159e9cd489daf68bcb9") format("woff");
-}
-
+    font-family: Helvetica;
+    font-weight: 400;
+    font-style: oblique;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.f9832a0fc1ee8fc5a359636e410d6941e1e4ca03.woff2?&hmac=775a8a34e13ea386c331d51fd5f061993cd3135ce54cc4ed2b9254f3a3be05df") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.0063286aec443697ebae04eeb9c78b820f9f7805.woff?&hmac=32c2cf4f29cdfb274d76aeb45a9a8b5c97eb6a9255cc2073ee5c1a85140ad7fe") format("woff");
+  }
+  
+  @font-face {
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: oblique;
+    src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.215fd4ca1a06214fa01e44328a1992c977700ea2.woff2?&hmac=b7d9523eaf6b1e57f158595303d5e41e66c07d43212d2fbfe8df1f4b7d6c1f79") format("woff2"),
+         url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.b0a2026ae2aa64d060f9ce0ee1b3c3c1aa21bf88.woff?&hmac=97dc9f03549c58cc74feee46ffde68daa822080823ae1159e9cd489daf68bcb9") format("woff");
+  }
+  
   
   $font-weight-body--bold: 700;
   $font-weight-body--bolder: 700;
@@ -603,7 +603,7 @@
   
   /*================ Product video ================*/
   
-$color-video-bg: #f2f2f2;
+  $color-video-bg: #f2f2f2;
   
   
   /*================ VENDOR ================*/
@@ -630,7 +630,7 @@ $color-video-bg: #f2f2f2;
   
   // Only called once so make sure proper file is grabbed
   @function slick-image-url($url) {
-    @return url(//cdn.shopify.com/s/files/1/0432/6372/1625/t/1/assets/ajax-loader.gif?v=4135686330247201572);
+    @return url(//cdn.shopify.com/s/files/1/0418/3080/9751/t/1/assets/ajax-loader.gif?v=4135686330247201572);
   }
   
   // Unused intentionally
@@ -8746,7 +8746,7 @@ $color-video-bg: #f2f2f2;
     input.datepicker {
       width: 100%;
       background: {
-        image: url('//cdn.shopify.com/s/files/1/0432/6372/1625/t/1/assets/calendar.png?v=117998397724632895');
+        image: url('//cdn.shopify.com/s/files/1/0418/3080/9751/t/1/assets/calendar.png?v=117998397724632895');
         repeat: no-repeat;
         position: right 10px center;
       }
