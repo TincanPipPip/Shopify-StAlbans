@@ -1600,18 +1600,18 @@
   }
   
   /*================ Paragraph styles ================*/
-  p {
-    color: $color-body-text;
-    margin: 0 0 ($section-spacing-small / 1.8);
+  // p {
+  //   color: $color-body-text;
+  //   margin: 0 0 ($section-spacing-small / 1.8);
   
-    @include media-query($small) {
-      font-size: em($font-size-base - 1);
-    }
+  //   @include media-query($small) {
+  //     font-size: em($font-size-base - 1);
+  //   }
   
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+  //   &:last-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
   
   /*================ Lists ================*/
   li {
@@ -1904,15 +1904,15 @@
   }
   
   /*================ #Links and Buttons ================*/
-  a {
-    color: $color-text;
-    text-decoration: none;
+  // a {
+  //   color: $color-text;
+  //   text-decoration: none;
   
-    &:not([disabled]):hover,
-    &:focus {
-      color: $color-text-focus;
-    }
-  }
+  //   &:not([disabled]):hover,
+  //   &:focus {
+  //     color: $color-text-focus;
+  //   }
+  // }
   
   .password-powered-by a {
     &:not([disabled]):hover,
@@ -1927,49 +1927,49 @@
   }
   
   /*================ Buttons ================*/
-  .btn {
-    @include user-select();
-    @include prefix(appearance, none, webkit moz spec);
-    display: inline-block;
-    width: auto;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: $border-radius;
-    padding: $input-padding-top-bottom-small $input-padding-left-right-small;
-    background-color: $color-btn-primary;
-    color: $color-btn-primary-text;
-    font-family: $font-stack-header;
-    font-style: $font-style-header;
-    font-weight: $font-weight-header;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    white-space: normal;
-    font-size: $font-size-base - 2;
+  // .btn {
+  //   @include user-select();
+  //   @include prefix(appearance, none, webkit moz spec);
+  //   display: inline-block;
+  //   width: auto;
+  //   text-decoration: none;
+  //   text-align: center;
+  //   vertical-align: middle;
+  //   cursor: pointer;
+  //   border: 1px solid transparent;
+  //   border-radius: $border-radius;
+  //   padding: $input-padding-top-bottom-small $input-padding-left-right-small;
+  //   background-color: $color-btn-primary;
+  //   color: $color-btn-primary-text;
+  //   font-family: $font-stack-header;
+  //   font-style: $font-style-header;
+  //   font-weight: $font-weight-header;
+  //   text-transform: uppercase;
+  //   letter-spacing: 0.08em;
+  //   white-space: normal;
+  //   font-size: $font-size-base - 2;
   
-    @include media-query($medium-up) {
-      padding: $input-padding-top-bottom $input-padding-left-right;
-    }
+  //   @include media-query($medium-up) {
+  //     padding: $input-padding-top-bottom $input-padding-left-right;
+  //   }
   
-    &:not([disabled]):hover,
-    &:focus {
-      color: $color-btn-primary-text;
-      background-color: $color-btn-primary-focus;
-    }
+  //   &:not([disabled]):hover,
+  //   &:focus {
+  //     color: $color-btn-primary-text;
+  //     background-color: $color-btn-primary-focus;
+  //   }
   
-    .icon-arrow-right,
-    .icon-arrow-left {
-      height: 9px;
-    }
+  //   .icon-arrow-right,
+  //   .icon-arrow-left {
+  //     height: 9px;
+  //   }
   
-    &[disabled],
-    &[aria-disabled] {
-      cursor: default;
-      opacity: 0.5;
-    }
-  }
+  //   &[disabled],
+  //   &[aria-disabled] {
+  //     cursor: default;
+  //     opacity: 0.5;
+  //   }
+  // }
   
   .btn--secondary {
     background-color: transparent;
