@@ -6,10 +6,10 @@
  * @namespace product
  */
 
-import {getUrlWithVariant, ProductForm} from '@shopify/theme-product-form';
-import {formatMoney} from '@shopify/theme-currency';
-import {register} from '@shopify/theme-sections';
-import {forceFocus} from '@shopify/theme-a11y';
+import { getUrlWithVariant, ProductForm } from '@shopify/theme-product-form';
+import { formatMoney } from '@shopify/theme-currency';
+import { register } from '@shopify/theme-sections';
+import { forceFocus } from '@shopify/theme-a11y';
 
 const classes = {
   hide: 'hide',
@@ -211,6 +211,6 @@ register('product', {
     }
 
     const url = getUrlWithVariant(window.location.href, variant.id);
-    window.history.replaceState({path: url}, '', url);
+    window.history.replaceState({ path: url }, '', url);
   },
 });

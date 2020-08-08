@@ -7,26 +7,33 @@
     Usage:
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
 {% endcomment %}
-<ul class="site-nav list--inline{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}" id="SiteNav">
-  {% for link in linklists[linklist].links %}
-    {%- assign child_list_handle = link.title | handleize -%}
 
-    {% comment %}
+
+<ul class="menu" id="SiteNav">
+    {% for link in linklists[linklist].links %}
+        {%- assign child_list_handle = link.title | handleize -%}
+
+        {% comment %}
       Check if third-level nav exists on each parent link.
     {% endcomment %}
-    {%- assign three_level_nav = false -%}
-    {% if link.links != blank %}
-      {% if link.levels == 2 %}
-        {%- assign three_level_nav = true -%}
-      {% endif %}
-    {% endif %}
+        <!-- {%- assign three_level_nav = false -%}
+        {% if link.links != blank %}
+            {% if link.levels == 2 %}
+                {%- assign three_level_nav = true -%}
+            {% endif %}
+        {% endif %} -->
 
-    {% if link.links != blank %}
-      <li class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
-        <button class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
-          <span class="site-nav__label">{{ link.title | escape }}</span>{% include 'icon-chevron-down' %}
-        </button>
+        {% if link.links != blank %}
+            <!-- <li class="">
+          <a href="/whats-on" title="Find out what's on at the museums" data-drupal-link-system-path="node/31" class="is-active">What's On</a>
+                </li> -->
+            <li class="menu-item menu-item--collapsed {% if link.active %} menu-item--active-trail{% endif %}" data-has-dropdowns>
+                <button aria-controls="SiteNavLabel-{{ child_list_handle }}" aria-expanded="false" class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button">
+                    <span class="site-nav__label">{{ link.title | escape }}</span>
+                    {% include 'icon-chevron-down' %}
+                </button>
 
+                <!--   no drop down functionality for now
         <div class="site-nav__dropdown{% if three_level_nav %} site-nav__dropdown--centered{% endif %}" id="SiteNavLabel-{{ child_list_handle }}">
           {% if three_level_nav %}
             <div class="site-nav__childlist">
@@ -76,17 +83,14 @@
               {% endfor %}
             </ul>
           {% endif %}
-        </div>
-      </li>
-    {% else %}
-      <li {% if link.active %} class="site-nav--active"{% endif %}>
-        <a href="{{ link.url }}"
-          class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
-          {% if link.current %} aria-current="page"{% endif %}
-        >
-          <span class="site-nav__label">{{ link.title | escape }}</span>
-        </a>
-      </li>
-    {% endif %}
-  {% endfor %}
+        </div> -->
+            </li>
+        {% else %}
+            <li {% if link.active %} class="site-nav--active" {% endif %}>
+                <a href="{{ link.url }}" class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
+                    <span class="site-nav__label">{{ link.title | escape }}</span>
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
 </ul>
