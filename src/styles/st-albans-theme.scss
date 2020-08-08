@@ -231,7 +231,7 @@ img {
 
 .header__logo {
   @include bg-img;
-  background-image: url('../images/logo-blue.svg');
+  background-image: url('logo-blue.svg');
   background-position: left center;
   display: block;
   padding-left: 90px;
@@ -415,7 +415,7 @@ img {
       top: $padding/2;
       right: $padding;
       background-color: transparent;
-      background-image: url('../images/search-white.svg');
+      background-image: url('search-white.svg');
       background-size: 20px;
       padding: $padding/2 $padding;
       border: 0;
@@ -457,13 +457,13 @@ img {
 }
 
 .block-link__search {
-  background-image: url('../images/search-purple.svg');
+  background-image: url('search-purple.svg');
   background-size: 20px;
   background-position: center center;
   margin-left: $padding/2;
 
   &:hover {
-    background-image: url('../images/search-gold.svg');
+    background-image: url('search-gold.svg');
   }
 
   @include media-query($mobile) {
@@ -638,7 +638,7 @@ img {
   input[type='submit'] {
     @include rm-text;
     @include bg-img;
-    background-image: url('../images/search-white.svg');
+    background-image: url('search-white.svg');
     background-size: 20px;
     background-color: $purple;
     position: absolute;
@@ -812,7 +812,7 @@ img {
   display: block;
   height: 40px;
   width: 40px;
-  background-image: url('../images/image-credit.svg');
+  background-image: url('image-credit.svg');
   background-size: 20px;
   z-index: 3;
   cursor: help !important;
@@ -1060,21 +1060,21 @@ img {
   background-size: 25px;
 
   &.social--twitter {
-    background-image: url('../images/social/social-twitter.svg');
+    background-image: url('social/social-twitter.svg');
   }
 
   &.social--facebook {
-    background-image: url('../images/social/social-facebook.svg');
+    background-image: url('social/social-facebook.svg');
     background-size: auto 22px;
   }
 
   &.social--instagram {
-    background-image: url('../images/social/social-instagram.svg');
+    background-image: url('social/social-instagram.svg');
     background-size: 20px;
   }
 
   &.social--youtube {
-    background-image: url('../images/social/social-youtube.svg');
+    background-image: url('social/social-youtube.svg');
   }
 
   &:hover {
@@ -1087,7 +1087,7 @@ img {
   @include caps;
   padding-left: $padding;
   font-size: 14px;
-  background-image: url('../images/calendar-white.svg');
+  background-image: url('calendar-white.svg');
   background-position: left center;
   background-size: $padding/2;
   line-height: 1.2;
@@ -1211,7 +1211,7 @@ img {
           @include bg-img;
           content: '';
           position: absolute;
-          background-image: url('../images/eye-view.svg');
+          background-image: url('eye-view.svg');
           background-size: 30px;
           background-color: transparentize($purple, 0.5);
           top: 0;
@@ -1236,7 +1236,7 @@ img {
   }
 
   .dates {
-    background-image: url('../images/calendar-dark.svg');
+    background-image: url('calendar-dark.svg');
     color: $purple;
     transition: color 0.2s ease-out;
   }
@@ -1363,7 +1363,7 @@ img {
       color: #fff;
 
       span {
-        background-image: url('../images/arrow-white.svg');
+        background-image: url('arrow-white.svg');
       }
 
       &.book {
@@ -1428,7 +1428,7 @@ img {
 
     .header__logo {
       color: #fff;
-      background-image: url('../images/logo-white.svg');
+      background-image: url('logo-white.svg');
       top: 25px;
       left: 25px;
 
@@ -1480,7 +1480,7 @@ img {
     }
 
     &.block-link__search {
-      background-image: url('../images/search-white.svg');
+      background-image: url('search-white.svg');
 
       &:hover {
         opacity: 0.7;
@@ -1618,7 +1618,7 @@ img {
 
     &::before {
       @include bg-img;
-      background-image: url('../images/triangle-home-big.svg');
+      background-image: url('triangle-home-big.svg');
       background-position: center top;
       content: '';
       position: absolute;
@@ -1645,7 +1645,7 @@ img {
 
 .section-whatson {
   @include bg-img;
-  background-image: url('../images/triangle-home-sm-up.svg');
+  background-image: url('triangle-home-sm-up.svg');
   background-position: center bottom;
   background-size: 25%;
   padding: $padding * 3 0 $padding * 4;
@@ -1679,7 +1679,7 @@ img {
     @include bg-img;
     content: '';
     display: block;
-    background-image: url('../images/triangle-home-sm-up.svg');
+    background-image: url('triangle-home-sm-up.svg');
     width: 200px;
     height: 100px;
 
@@ -1884,7 +1884,7 @@ img {
     border-color: #fff;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url('arrow-white.svg');
     }
 
     &:hover {
@@ -1892,7 +1892,7 @@ img {
       color: $purple;
 
       span {
-        background-image: url('../images/arrow-purple.svg');
+        background-image: url('arrow-purple.svg');
       }
     }
   }
@@ -1900,7 +1900,7 @@ img {
 
 .section-stories {
   @include bg-img;
-  background-image: url('../images/triangle-home-sm-down.svg');
+  background-image: url('triangle-home-sm-down.svg');
   background-position: center top;
   background-size: 25%;
   background-color: $beige-lt;
@@ -2032,7 +2032,7 @@ img {
       }
 
       span {
-        background-image: url('../images/arrow-white.svg');
+        background-image: url('arrow-white.svg');
       }
     }
 
@@ -2263,11 +2263,11 @@ img {
 
   .chosen-container-single .chosen-single,
   select {
-    background-image: url('../images/marker-lilac.svg');
+    background-image: url('marker-lilac.svg');
 
     & > div {
       @include bg-img;
-      background-image: url('../images/triangle-down.png');
+      background-image: url('triangle-down.png');
       background-size: 14px;
       right: 13px;
     }
@@ -2275,24 +2275,24 @@ img {
 
   .form-item-audience .chosen-container-single .chosen-single,
   .form-item-audience select {
-    background-image: url('../images/audience-lilac.svg');
+    background-image: url('audience-lilac.svg');
   }
 
   .form-item-topic .chosen-container-single .chosen-single,
   .form-item-topic select {
-    background-image: url('../images/topic-lilac.svg');
+    background-image: url('topic-lilac.svg');
   }
 
   .form-item-years .chosen-container-single .chosen-single,
   .form-item-years select {
-    background-image: url('../images/calendar-lilac.svg');
+    background-image: url('calendar-lilac.svg');
   }
 
   .chosen-container-active .chosen-single {
     border-color: $tan;
 
     & > div {
-      background-image: url('../images/triangle-up.png');
+      background-image: url('triangle-up.png');
     }
   }
 
@@ -2325,7 +2325,7 @@ img {
   }
 
   .filter-btn {
-    background-image: url('../images/calendar-lilac.svg');
+    background-image: url('calendar-lilac.svg');
     margin-left: $padding/2;
     text-decoration: none;
 
@@ -2345,7 +2345,7 @@ img {
       float: right;
       height: 50px;
       width: 14px;
-      background-image: url('../images/triangle-down.png');
+      background-image: url('triangle-down.png');
 
       @include media-query($small) {
         height: $padding;
@@ -2444,7 +2444,7 @@ img {
     margin-bottom: $padding;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url('arrow-white.svg');
     }
 
     &:hover {
@@ -2452,7 +2452,7 @@ img {
       color: $purple;
 
       span {
-        background-image: url('../images/arrow-purple.svg');
+        background-image: url('arrow-purple.svg');
       }
     }
   }
@@ -2547,7 +2547,7 @@ address {
   }
 
   &.partner--council {
-    background-image: url('../images/logo-council.svg');
+    background-image: url('logo-council.svg');
     background-position: left center;
 
     @include media-query($sm-mobile) {
@@ -2556,11 +2556,11 @@ address {
   }
 
   &.partner--trust {
-    background-image: url('../images/logo-samg-trust.svg');
+    background-image: url('logo-samg-trust.svg');
   }
 
   &.partner--hlf {
-    background-image: url('../images/logo-hlf.svg');
+    background-image: url('logo-hlf.svg');
     background-position: right center;
 
     @include media-query($sm-mobile) {
@@ -2681,7 +2681,7 @@ address {
 
       .glyphicon {
         @include bg-img;
-        background-image: url('../images/triangle-home-sm-down.svg');
+        background-image: url('triangle-home-sm-down.svg');
         background-size: 25px;
         transition: all 0.2s ease-out;
         display: inline-block;
@@ -2844,7 +2844,7 @@ address {
   select {
     & > div {
       @include bg-img;
-      background-image: url('../images/triangle-down.png');
+      background-image: url('triangle-down.png');
       background-size: 14px;
       right: 13px;
     }
@@ -2854,7 +2854,7 @@ address {
     border-color: $tan;
 
     & > div {
-      background-image: url('../images/triangle-up.png');
+      background-image: url('triangle-up.png');
     }
   }
 
