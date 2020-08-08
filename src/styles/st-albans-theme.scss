@@ -711,7 +711,8 @@ img {
   }
 
   &.banner--opacity-25 {
-    img {
+    img,
+    .hero {
       opacity: 0.25;
 
       @include media-query($mobile) {
@@ -720,7 +721,8 @@ img {
     }
   }
   &.banner--opacity-50 {
-    img {
+    img,
+    .hero {
       opacity: 0.5;
 
       @include media-query($mobile) {
@@ -729,7 +731,8 @@ img {
     }
   }
   &.banner--opacity-75 {
-    img {
+    img,
+    .hero {
       opacity: 0.75;
 
       @include media-query($mobile) {
@@ -738,7 +741,8 @@ img {
     }
   }
 
-  img {
+  img,
+  .hero {
     width: 100%;
     height: 100%;
     object-fit: cover;
