@@ -1,19 +1,46 @@
-Deploy complete @ Sat Aug 08 2020 06:39:44 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Sat Aug 08 2020 06:46:08 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/header.liquid.
-Deploy complete @ Sat Aug 08 2020 08:45:35 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/test.js.
-Deploy complete @ Sat Aug 08 2020 08:46:12 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/test.js.
-Deploy complete @ Sat Aug 08 2020 08:46:59 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/test.js.
-Deploy complete @ Sat Aug 08 2020 08:49:26 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
-Deploy complete @ Sat Aug 08 2020 08:57:18 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/test.js.
-Deploy complete @ Sat Aug 08 2020 08:58:36 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/pippip.global.js.
-Deploy complete @ Sat Aug 08 2020 08:58:38 GMT+0100 (British Summer Time). removed 1 file(s): assets/test.js.
-Deploy complete @ Sat Aug 08 2020 08:59:04 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/header.liquid.
-Deploy complete @ Sat Aug 08 2020 09:05:16 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/header.liquid.
-Deploy complete @ Sat Aug 08 2020 09:11:55 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/pippip.global.js.
-Deploy complete @ Sat Aug 08 2020 09:12:11 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/pippip.global.js.
-Deploy complete @ Sat Aug 08 2020 09:12:53 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
-Deploy complete @ Sat Aug 08 2020 09:13:05 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/pippip.global.js.
-Deploy complete @ Sat Aug 08 2020 09:15:12 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
-Deploy complete @ Sat Aug 08 2020 09:15:25 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
-Deploy complete @ Sat Aug 08 2020 09:15:29 GMT+0100 (British Summer Time). added/changed 1 file(s): assets/global.js.
-Deploy complete @ Sat Aug 08 2020 09:15:30 GMT+0100 (British Summer Time). removed 1 file(s): assets/pippip.global.js.
+Deploy complete @ Sat Aug 08 2020 10:06:44 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:07:07 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Sat Aug 08 2020 10:07:33 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:08:02 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:09:18 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:39:08 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:39:19 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:51:54 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 10:55:28 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
+Deploy complete @ Sat Aug 08 2020 10:55:39 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
+Deploy complete @ Sat Aug 08 2020 10:55:47 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
+Deploy complete @ Sat Aug 08 2020 10:56:03 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
+Deploy complete @ Sat Aug 08 2020 10:57:07 GMT+0100 (British Summer Time). added/changed 1 file(s): layout/theme.liquid.
+Deploy complete @ Sat Aug 08 2020 11:11:03 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 11:20:01 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 11:37:38 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 11:43:31 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 11:44:19 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 11:44:51 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:37:09 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:37:15 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:38:30 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:40:32 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:45:45 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:46:10 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:47:00 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:48:08 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:48:41 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:49:05 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 12:59:05 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:11:18 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:11:19 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:11:31 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:12:42 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:13:37 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:20:39 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:22:05 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:23:51 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:30:02 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:30:10 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:33:55 GMT+0100 (British Summer Time). added/changed 5 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Sat Aug 08 2020 13:37:23 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/hero.liquid.
+Deploy complete @ Sat Aug 08 2020 13:42:37 GMT+0100 (British Summer Time). added/changed 5 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Sat Aug 08 2020 13:44:28 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Sat Aug 08 2020 13:45:33 GMT+0100 (British Summer Time). added/changed 5 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Sat Aug 08 2020 13:48:12 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
