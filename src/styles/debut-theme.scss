@@ -2648,13 +2648,13 @@
     }
   }
   
-  .site-nav__label {
-    border-bottom: 1px solid transparent;
+  // .site-nav__label {
+  //   border-bottom: 1px solid transparent;
   
-    .site-nav__link--active & {
-      border-bottom-color: $color-text;
-    }
-  }
+  //   .site-nav__link--active & {
+  //     border-bottom-color: $color-text;
+  //   }
+  // }
   
   .site-nav__link--button {
     border: none;

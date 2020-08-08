@@ -530,7 +530,8 @@ img {
     display: block;
   }
 }
-.nav__toggle--active {
+.nav__toggle--active,
+.mobile-nav--close {
   @include media-query($mobile) {
     background: $purple;
     height: 60px;
@@ -1060,21 +1061,21 @@ img {
   background-size: 25px;
 
   &.social--twitter {
-    background-image: url('social/social-twitter.svg');
+    background-image: url('social-twitter.svg');
   }
 
   &.social--facebook {
-    background-image: url('social/social-facebook.svg');
+    background-image: url('social-facebook.svg');
     background-size: auto 22px;
   }
 
   &.social--instagram {
-    background-image: url('social/social-instagram.svg');
+    background-image: url('social-instagram.svg');
     background-size: 20px;
   }
 
   &.social--youtube {
-    background-image: url('social/social-youtube.svg');
+    background-image: url('social-youtube.svg');
   }
 
   &:hover {
@@ -1398,7 +1399,8 @@ img {
 }
 
 // CT specific
-.ct__homepage {
+.ct__homepage,
+.template-index {
   border-top: 20px solid #fff;
 
   &.user-logged-in {
@@ -1503,7 +1505,8 @@ img {
       }
     }
 
-    &.nav__toggle--active {
+    &.nav__toggle--active,
+    &.mobile-nav--close {
       background: #fff;
 
       @include media-query($mobile) {
