@@ -22,5 +22,8 @@
     "build": "slate build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "resolutions": {
+    "graceful-fs": "4.2.4"
+  }
 }

@@ -1,1 +1,83 @@
-.row{max-width:1350px}@font-face{font-family:KfrW-Rg;src:url(../fonts/kfrw-rg.eot);src:url(../fonts/kfrw-rg.eot?#iefix) format("embedded-opentype"),url(../fonts/kfrw-rg.woff2) format("woff2"),url(../fonts/kfrw-v.woff) format("woff"),url(../fonts/kfrw-rg.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KfrW-Bd;src:url(../fonts/kfrw-bd.eot);src:url(../fonts/kfrw-bd.eot?#iefix) format("embedded-opentype"),url(../fonts/kfrw-bd.woff2) format("woff2"),url(../fonts/kfrw-bd.woff) format("woff"),url(../fonts/kfrw-bd.ttf) format("truetype");font-weight:400;font-style:normal}.freeze{overflow:hidden}.overlay__wrapper{display:none;position:fixed;height:100%;width:100%;top:0;left:0;background-color:rgba(0,0,0,.6);z-index:9999;text-align:center;cursor:pointer;overflow-y:scroll}.overlay__close{text-align:left;text-indent:-9999px;background-position:50%;background-repeat:no-repeat;background-size:contain;position:absolute;top:1.5em;right:1.5em;display:block;height:30px;width:30px;background-image:url(../images/emClose.png);background-size:20px;cursor:pointer;transition:opacity .2s ease-out}.overlay__close:hover{opacity:.7}.overlay__insert{background:#fff;cursor:default;position:relative;display:inline-block;width:95%;max-width:1200px;height:auto;text-align:left;padding:30px}.overlay__insert h2,.overlay__insert h3{width:90%}@media (max-width:480px){.overlay__insert{padding:15px}.overlay__insert .overlay__close{right:15px;top:15px}}
+.row {
+  max-width: 1350px;
+}
+@font-face {
+  font-family: KfrW-Rg;
+  src: url(../fonts/kfrw-rg.eot);
+  src: url(../fonts/kfrw-rg.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/kfrw-rg.woff2) format("woff2"),
+    url(../fonts/kfrw-v.woff) format("woff"),
+    url(../fonts/kfrw-rg.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: KfrW-Bd;
+  src: url(../fonts/kfrw-bd.eot);
+  src: url(../fonts/kfrw-bd.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/kfrw-bd.woff2) format("woff2"),
+    url(../fonts/kfrw-bd.woff) format("woff"),
+    url(../fonts/kfrw-bd.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.freeze {
+  overflow: hidden;
+}
+.overlay__wrapper {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  text-align: center;
+  cursor: pointer;
+  overflow-y: scroll;
+}
+.overlay__close {
+  text-align: left;
+  text-indent: -9999px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-image: url(emClose.png);
+  background-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+.overlay__close:hover {
+  opacity: 0.7;
+}
+.overlay__insert {
+  background: #fff;
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  text-align: left;
+  padding: 30px;
+}
+.overlay__insert h2,
+.overlay__insert h3 {
+  width: 90%;
+}
+@media (max-width: 480px) {
+  .overlay__insert {
+    padding: 15px;
+  }
+  .overlay__insert .overlay__close {
+    right: 15px;
+    top: 15px;
+  }
+}
