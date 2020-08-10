@@ -1,43 +1,7 @@
-Deploy error @ Mon Aug 10 2020 13:56:25 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-13:56:25 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy error @ Mon Aug 10 2020 13:56:30 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-13:56:30 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy complete @ Mon Aug 10 2020 13:56:57 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Mon Aug 10 2020 13:57:40 GMT+0100 (British Summer Time). added/changed 1 file(s): config/settings_data.json.
-Deploy complete @ Mon Aug 10 2020 13:57:54 GMT+0100 (British Summer Time). added/changed 1 file(s): config/settings_data.json.
-Deploy error @ Mon Aug 10 2020 13:59:41 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-13:59:41 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy error @ Mon Aug 10 2020 14:00:59 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-14:00:59 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy error @ Mon Aug 10 2020 14:01:17 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-14:01:17 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy error @ Mon Aug 10 2020 14:03:02 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-14:03:02 [development]Asset Perform Update to sections/feature-row.liquid at host angelou-unt.myshopify.com
-	Status: 422 Unprocessable Entity
-	Errors: Invalid JSON in tag 'schema'
- 
-Deploy complete @ Mon Aug 10 2020 14:05:20 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-Deploy complete @ Mon Aug 10 2020 14:05:29 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-Deploy complete @ Mon Aug 10 2020 14:08:08 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-Deploy complete @ Mon Aug 10 2020 14:14:45 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-Deploy complete @ Mon Aug 10 2020 14:16:27 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/feature-row.liquid.
-Deploy complete @ Mon Aug 10 2020 14:23:46 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Mon Aug 10 2020 14:23:53 GMT+0100 (British Summer Time). added/changed 9 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/debut-theme.scss.liquid, assets/theme.scss.liquid, assets/theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Mon Aug 10 2020 14:23:58 GMT+0100 (British Summer Time). added/changed 5 file(s): assets/debut-theme.scss.liquid, assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Mon Aug 10 2020 14:24:01 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
-Deploy complete @ Mon Aug 10 2020 14:24:18 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Mon Aug 10 2020 15:11:35 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
+Deploy complete @ Mon Aug 10 2020 15:14:43 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/custom-content.liquid.
+Deploy complete @ Mon Aug 10 2020 15:22:50 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/custom-content.liquid.
+Deploy complete @ Mon Aug 10 2020 15:23:01 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/custom-content.liquid.
+Deploy complete @ Mon Aug 10 2020 15:26:29 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/custom-content.liquid.
+Deploy complete @ Mon Aug 10 2020 15:26:51 GMT+0100 (British Summer Time). added/changed 1 file(s): sections/custom-content.liquid.
+Deploy complete @ Mon Aug 10 2020 15:32:44 GMT+0100 (British Summer Time). added/changed 4 file(s): assets/debut-theme.scss.liquid, assets/overlay.scss.liquid, assets/st-albans-theme.scss.liquid, assets/theme.scss.liquid.
