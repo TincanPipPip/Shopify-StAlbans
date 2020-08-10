@@ -1354,6 +1354,14 @@
       padding-bottom: 50%;
       content:"";
   }
+
+  .ratio-container:after {
+    padding-bottom: 50%;
+    @include media-query($medium-up) {
+      padding-bottom: 0;
+    }
+  }
+
   .ratio-container > * {
       position: absolute;
       top: 0;
@@ -3198,28 +3206,7 @@
       padding-bottom: 0;
     }
   }
-  
-  .index-section--flush + .index-section--flush {
-    margin-top: -($section-spacing-small * 2);
-  }
-  
-  [class*="index-section--flush"] + [class*="index-section--flush"] {
-    @include media-query($medium-up) {
-      margin-top: -($section-spacing * 2);
-    }
-  }
-  
-  // Flush sections should be tight to the nav if they are the first on the page
-  .index-section--flush:first-child {
-    margin-top: -$section-spacing-small;
-  }
-  
-  [class*="index-section--flush"]:first-child {
-    @include media-query($medium-up) {
-      margin-top: -$section-spacing;
-    }
-  }
-  
+
   // Flush sections should be tight to the footer if they are last on the page
   .index-section--flush:last-child {
     margin-bottom: -$section-spacing-small;
