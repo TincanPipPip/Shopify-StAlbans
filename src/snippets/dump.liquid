@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    console.log("Dumping");
+    console.log({{ dump | json }});
+</script>
+
+{% comment %} 
+
+Usage in template files:
+{% include 'dump' with [OBJECT] %}
+
+Example: Used within product.liquid template file
+'product.liquid' {% include 'dump' with product %}
+
+Open Chrome console and you will see an object that you can drill into and explore.
+
+eg - 2 - 
+    {% include 'dump' with section.settings %}
+
+    used in feature-row.liquid file
+
+{% endcomment %} 

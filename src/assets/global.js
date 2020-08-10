@@ -1,5 +1,4 @@
 (function ($) {
-    console.log('working');
     /*
           1. Set everything up as variables, e.g:
        
