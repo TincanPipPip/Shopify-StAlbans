@@ -1,6 +1,6 @@
-<div class="page-width feature-row">
+<div class="row vert-center">
     {% capture image_layout %}
-        <div class="feature-row__item">
+        <div class="large-5 columns">
             {% if section.settings.image != blank %}
                 {% capture img_id %}FeatureRowImage-{{ section.id }}
                 {% endcapture %}
@@ -20,46 +20,69 @@
             {% else %}
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
+
+            <div class="welcome__content">
+                <div class="welcome__content__inner">
+                    {% if section.settings.welcome_title != blank %}
+                        <h4>{{ section.settings.welcome_title | escape }}</h4>
+                    {% endif %}
+                    <p>
+                        St Albans Museum + Gallery is free to visit&nbsp;and Verulamium
+                                                                                        Museum is free for St Albans residents.
+                    </p>
+                    <section class="entity entity__cta clearfix">
+                        <a class="btn" href="/whats-on" title="See what’s on">See what’s on<span></span>
+                        </a>
+                    </section>
+                </div>
+            </div>
         </div>
     {% endcapture %}
 
-    <div class="feature-row">
-        {% if section.settings.layout == 'left' %}
-            {{ image_layout }}
-        {% endif %}
+    {% if section.settings.layout == 'left' %}
+        {{ image_layout }}
 
-        <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
-            {% if section.settings.title != blank %}
-                <h2 class="h3">{{ section.settings.title | escape }}</h2>
-            {% endif %}
-            {% if section.settings.text != blank %}
-                <div class="rte rte-setting featured-row__subtext">{{ section.settings.text }}</div>
-            {% endif %}
-            {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-                {%- capture ariaLabel -%}
-                    {{- section.settings.button_label -}}
-                    {%- if section.settings.button_link.type == 'frontpage_link' -%}
-                        :
-                        {{ 'homepage.general.title' | t -}}
-                    {%- elsif section.settings.button_link.type == 'catalog_link' -%}
-                        :
-                        {{ 'collections.catalog.title' | t -}}
-                    {%- elsif section.settings.button_link.object.title -%}
-                        :
-                        {{ section.settings.button_link.object.title -}}
-                    {%- endif -%}
-                {%- endcapture -%}
-
-                <a href="{{ section.settings.button_link }}" class="btn" aria-label="{{ ariaLabel }}">
-                    {{- section.settings.button_label | escape -}}
-                </a>
-            {% endif %}
+        <div class="large-1 columns to-hide">
+            &nbsp;
         </div>
+    {% endif %}
 
-        {% if section.settings.layout == 'right' %}
-            {{ image_layout }}
+    <div class="large-6 columns intro">
+        {% if section.settings.title != blank %}
+            <h1>{{ section.settings.title | escape }}</h1>
+        {% endif %}
+        {% if section.settings.text != blank %}
+            <p>{{ section.settings.text }}</p>
+        {% endif %}
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+            {%- capture ariaLabel -%}
+                {{- section.settings.button_label -}}
+                {%- if section.settings.button_link.type == 'frontpage_link' -%}
+                    :
+                    {{ 'homepage.general.title' | t -}}
+                {%- elsif section.settings.button_link.type == 'catalog_link' -%}
+                    :
+                    {{ 'collections.catalog.title' | t -}}
+                {%- elsif section.settings.button_link.object.title -%}
+                    :
+                    {{ section.settings.button_link.object.title -}}
+                {%- endif -%}
+            {%- endcapture -%}
+            <section class="entity entity__cta clearfix">
+                <a href="{{ section.settings.button_link }}" class="btn" aria-label="{{ ariaLabel }}">
+                    {{- section.settings.button_label | escape -}}<span></span>
+                </a>
+            </section>
         {% endif %}
     </div>
+
+    {% if section.settings.layout == 'right' %}
+
+        <div class="large-1 columns to-hide">
+            &nbsp;
+        </div>
+        {{ image_layout }}
+    {% endif %}
 </div>
 
 

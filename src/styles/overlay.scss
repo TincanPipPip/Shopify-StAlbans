@@ -1,5 +1,5 @@
 /* --- Include setup file --- */
-@import './helpers/_setup.scss';
+@import "./helpers/_setup.scss";
 
 // --------------------------------
 //					   		OVERLAY
@@ -32,7 +32,7 @@
   display: block;
   height: 30px;
   width: 30px;
-  background-image: url('../images/emClose.png');
+  background-image: url("emClose.png");
   background-size: 20px;
   cursor: pointer;
   transition: opacity 0.2s ease-out;
@@ -58,7 +58,7 @@
     width: 90%;
   }
 
-  @include media('<=small') {
+  @include media("<=small") {
     padding: 15px;
 
     .overlay__close {
