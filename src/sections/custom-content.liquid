@@ -49,7 +49,7 @@
                 {% endunless %}
             {% endif %}
 
-            <div class="custom__item custom__item--{{ block.type }} custom__item--{{ block.id }} {{ block_width_mobile }} {{ block_width }}{% if block.settings.alignment %} align--{{ block.settings.alignment }}{% endif %}" {{ block.shopify_attributes }}>
+            <div class="{{ block_width_mobile }} {{ block_width }}{% if block.settings.alignment %} align--{{ block.settings.alignment }}{% endif %}" {{ block.shopify_attributes }}>
                 <div class="custom__item-inner custom__item-inner--{{ block.type }}" {% if block.type == 'image' %} id="{{ img_wrapper_id }}" {% endif %}>
                     {% case block.type %}
                         {% when 'image' %}

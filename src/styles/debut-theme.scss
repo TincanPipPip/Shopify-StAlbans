@@ -1552,35 +1552,6 @@ $grid-breakpoints: (
   height: 100%;
 }
 
-/*================ #Basic Styles ================*/
-body,
-html {
-  background-color: $color-body;
-}
-
-.page-width {
-  @include clearfix();
-  max-width: $width-site;
-  margin: 0 auto;
-}
-
-.main-content {
-  display: block;
-  padding-top: $section-spacing-small;
-
-  @include media-query($medium-up) {
-    padding-top: $section-spacing;
-  }
-}
-
-.section-header {
-  margin-bottom: $section-spacing-small;
-
-  @include media-query($medium-up) {
-    margin-bottom: $section-spacing;
-  }
-}
-
 /*================ RTE headings ================*/
 .rte {
   color: $color-body-text;
