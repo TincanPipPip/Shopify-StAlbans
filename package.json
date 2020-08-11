@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@shopify/slate": "^0.14.0"
+    "@shopify/slate": "^0.14.0",
+    "flickity": "^2.2.1"
   },
   "devDependencies": {
     "@shopify/slate-tools": "0.14.0",

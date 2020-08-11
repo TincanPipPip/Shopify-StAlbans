@@ -1836,6 +1836,13 @@ img {
   }
 }
 
+.intro-h4 {
+  display: block;
+  #shopify-section-feature-row & {
+    display: none;
+  }
+}
+
 .welcome__content {
   display: none;
 
@@ -1914,7 +1921,8 @@ img {
   }
 }
 
-.section-stories {
+.section-stories,
+.index-section--slideshow {
   @include bg-img;
   background-image: url("triangle-home-sm-down.svg");
   background-position: center top;
