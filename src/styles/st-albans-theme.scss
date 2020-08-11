@@ -1837,39 +1837,44 @@ img {
 }
 
 .welcome__content {
-  @include bg-img;
-  background-size: cover;
-  position: absolute;
-  background-color: $purple;
-  padding: $padding * 2;
-  color: #fff;
-  bottom: -$padding * 3;
-  right: 0;
-  max-width: 400px;
+  display: none;
 
-  @include media-query($tabletland) {
-    padding: $padding;
-    max-width: 325px;
-  }
-
-  @include media-query($tabletport) {
-    position: relative;
-    bottom: 0;
-    max-width: 100%;
-    margin-bottom: $padding;
-    padding: $padding/3;
-  }
-
-  &::after {
-    content: "";
-    background: $purple;
-    opacity: 0.9;
+  #shopify-section-feature-row & {
+    @include bg-img;
+    background-size: cover;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    background-color: $purple;
+    padding: $padding * 2;
+    color: #fff;
+    bottom: -$padding * 3;
+    right: 0;
+    max-width: 400px;
+    display: block;
+
+    @include media-query($tabletland) {
+      padding: $padding;
+      max-width: 325px;
+    }
+
+    @include media-query($tabletport) {
+      position: relative;
+      bottom: 0;
+      max-width: 100%;
+      margin-bottom: $padding;
+      padding: $padding/3;
+    }
+
+    &::after {
+      content: "";
+      background: $purple;
+      opacity: 0.9;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
   }
 }
 
