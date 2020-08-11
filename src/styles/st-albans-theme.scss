@@ -1661,6 +1661,10 @@ img {
     padding: $padding * 2 0 $padding * 2;
   }
 
+  .template-index & {
+    padding-top: 0;
+  }
+
   .view__footer {
     text-align: center;
   }
