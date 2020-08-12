@@ -7890,7 +7890,7 @@ $toolbar-height-small: 46px;
   &:hover,
   &:focus {
     .image-bar__overlay::before {
-      opacity: $hover-overlay-opacity;
+      opacity: 0.6;
     }
   }
 
@@ -7964,6 +7964,7 @@ $toolbar-height-small: 46px;
   width: 100%;
   text-align: center;
   text-shadow: 0 0 4px $color-text-shadow;
+  color: $color-overlay-title-text;
 }
 
 .collection-grid {

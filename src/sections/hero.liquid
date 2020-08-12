@@ -14,7 +14,7 @@
 {%- endstyle -%}
 {%- endif -%}
 <div class="clearfix">
-    <div class="banner banner--opacity-75" id="js-banner-front">
+    <div class="banner banner--opacity-75 js-banner-front" id="js-banner-front">
 
         <div class="hero hero--{{ section.settings.hero_size }} hero-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js" id="Hero-{{ section.id }}" data-layout="{{ section.settings.hero_layout }}" {%- if section.settings.image -%} {% unless section.settings.image.alt == blank %} role="img" aria-label="{{ section.settings.image.alt | escape }}" data-alt="{{ section.settings.image.alt | escape }}" {% endunless %} data-bg="{{ section.settings.image | img_url: '300x300' }}" data-bgset="{% include 'bgset', image: section.settings.image %}" data-sizes="auto" data-parent-fit="cover" style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});" {%- endif -%}>
             {%- if section.settings.image == blank -%}
