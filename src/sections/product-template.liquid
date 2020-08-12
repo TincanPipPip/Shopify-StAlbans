@@ -122,7 +122,7 @@
     <div class="grid__item {{ product_description_width }}">
       <div class="product-single__meta">
 
-        <h1 class="product-single__title">{{ product.title }}</h1>
+        <h2 class="featured bord-top">{{ product.title }}</h2>
 
           <div class="product__price">
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
@@ -207,16 +207,14 @@
                 <button type="submit" name="add"
                   {% unless current_variant.available %} aria-disabled="true"{% endunless %}
                   aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
-                  class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"
+                  class="btn alt product-form__cart-submit{% if section.settings.enable_payment_a %} btn--secondary-accent{% endif %}"
                   {% if settings.enable_ajax %}aria-haspopup="dialog"{% endif %}
                   data-add-to-cart>
-                  <span data-add-to-cart-text>
-                    {% unless current_variant.available %}
-                      {{ 'products.product.sold_out' | t }}
-                    {% else %}
-                      {{ 'products.product.add_to_cart' | t }}
-                    {% endunless %}
-                  </span>
+                  {% unless current_variant.available %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endunless %}
                   <span class="hide" data-loader>
                     {% include 'icon-spinner' %}
                   </span>
@@ -224,31 +222,30 @@
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
                 {% endif %}
+
+
+                  {%- comment -%}
+                    Live region for announcing updated price and availability to screen readers
+                  {%- endcomment -%}
+                  <p class="visually-hidden" data-product-status
+                  aria-live="polite"
+                  role="status"
+                ></p>
+
+                {%- comment -%}
+                  Live region for announcing that the product form has been submitted and the
+                  product is in the process being added to the cart
+                {%- endcomment -%}
+                <p class="visually-hidden" data-loader-status
+                  aria-live="assertive"
+                  role="alert"
+                  aria-hidden="true"
+                >{{ 'products.product.loader_label' | t }}</p>
+
+                {{ product.description }}
               </div>
             </div>
           {% endform %}
-        </div>
-
-        {%- comment -%}
-          Live region for announcing updated price and availability to screen readers
-        {%- endcomment -%}
-        <p class="visually-hidden" data-product-status
-          aria-live="polite"
-          role="status"
-        ></p>
-
-        {%- comment -%}
-          Live region for announcing that the product form has been submitted and the
-          product is in the process being added to the cart
-        {%- endcomment -%}
-        <p class="visually-hidden" data-loader-status
-          aria-live="assertive"
-          role="alert"
-          aria-hidden="true"
-        >{{ 'products.product.loader_label' | t }}</p>
-
-        <div class="product-single__description rte">
-          {{ product.description }}
         </div>
 
         {% if section.settings.show_share_buttons %}

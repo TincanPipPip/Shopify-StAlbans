@@ -380,12 +380,26 @@ $grid-breakpoint-has-widths: ($small, $medium-up);
 $grid-breakpoint-has-push: ($small, $medium-up);
 
 /*================ Color Variables ================*/
+/* --- Variables --- */
+$text: #7d7a89;
+$bg: #fafafb;
+$bg-alt: #e8e6eb;
+
+$gold: #84603f;
+$tan: #a88f78;
+$beige: #c1af9e;
+$beige-lt: #cdbfb2;
+$purple: #18073a;
+$lilac: #a7a1b3;
+$grey: #a9a3b6;
+$grey-lt: #fafafa;
+$black: #151524;
 
 // Text colors
 $color-text: #3a3a3a;
 $color-text-shadow: rgba(0, 0, 0, 0.4);
 $color-body-text: #333232;
-$color-sale-text: #ea0606;
+$color-sale-text: #84603f;
 $color-small-button-text-border: #3a3a3a;
 $color-text-field: #ffffff;
 $color-text-field-text: #000000;
@@ -2078,11 +2092,15 @@ a[href^="tel"] {
 /*================ Return to collection/blog links ================*/
 .return-link-wrapper {
   margin-top: ($section-spacing * 1.5);
-  margin-bottom: 0;
+  margin-bottom: ($section-spacing * 1.5);
 
   @include media-query($small) {
     margin-top: $section-spacing;
   }
+}
+
+.btn--has-icon-before.return-link {
+  padding-right: 18px;
 }
 
 .full-width-link {
@@ -3186,10 +3204,6 @@ $slick-dot-size-small: 10px;
     padding-top: 0;
     border-top: 0;
   }
-
-  &:last-child {
-    padding-bottom: 0;
-  }
 }
 
 // Flush sections should be tight to the footer if they are last on the page
@@ -3770,9 +3784,11 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   .shopify-payment-button__button--unbranded {
     @extend .btn;
     @extend .product-form__cart-submit;
+    background-color: $tan !important;
+    border: 1px solid $tan !important;
 
     &:hover {
-      background-color: $color-btn-primary-focus !important;
+      background-color: $gold !important;
     }
   }
   .shopify-payment-button__button--branded {
