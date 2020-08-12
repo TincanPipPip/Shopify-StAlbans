@@ -33,7 +33,7 @@
                         </h4>
 
                         {%- if section.settings.title != blank -%}
-                            <h2 class="featured">{{ section.settings.title | escape }}</h4>
+                            <h2 class="featured">{{ section.settings.title | escape }}</h2>
                         {%- endif -%}
                     </div>
                 </div>
@@ -59,6 +59,7 @@
 
                             <a href="{{ section.settings.button_link }}" class="btn" aria-label="{{ ariaLabel }}" target="_blank" title="Explore now">
                                 {{- section.settings.button_label | escape -}}
+                                <span></span>
                             </a>
                         {%- endif -%}
                     </div>

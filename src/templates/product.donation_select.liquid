@@ -6,12 +6,13 @@
 {% section 'product-recommendations' %}
 
 {% if collection %}
-  <div class="text-center return-link-wrapper page-width">
-    <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
-      {% include 'icon-arrow-left' %}
-      {{ 'products.product.back_to_collection' | t: title: collection.title }}
-    </a>
-  </div>
+    <div class="text-center return-link-wrapper page-width">
+        <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
+            {% include 'icon-arrow-left' %}
+            {{ 'products.product.back_to_collection' | t: title: collection.title }}
+            <span></span>
+        </a>
+    </div>
 {% endif %}
 
 <script>
@@ -28,38 +29,16 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Product",
-  "name": {{ product.title | json }},
-  "url": {{ shop.url | append: product.url | json }},
-  {%- if product.featured_media -%}
-    {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
-    "image": [
-      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
-    ],
-  {%- endif -%}
-  "description": {{ product.description | strip_html | json }},
-  {%- if current_variant.sku != blank -%}
-    "sku": {{ current_variant.sku | json }},
-  {%- endif -%}
-  "brand": {
-    "@type": "Thing",
-    "name": {{ product.vendor | json }}
-  },
-  "offers": [
-    {%- for variant in product.variants -%}
-      {
-        "@type" : "Offer",
-        {%- if variant.sku != blank -%}
-          "sku": {{ variant.sku | json }},
-        {%- endif -%}
-        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
-        "price" : {{ variant.price | divided_by: 100.00 | json }},
-        "priceCurrency" : {{ cart.currency.iso_code | json }},
-        "url" : {{ shop.url | append: variant.url | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-  ]
-}
+
+[36mLine: 1[0m
+[31m{[0m
+[31m    "@context": "http://schema.org/",[0m
+[31m    "@type": "Product",[0m
+[31m    "name": {{ product.title | json }},[0m
+[31m    "url": {{ shop.url | append: product.url | json }},{%- if product.featured_media -%}[0m
+[31m        {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}[0m
+[31m        "image" : [{{ product.featured_media | img_url: media_size | prepend: "https:" | json }}],{%- endif -%}[0m
+
+[36mLine: 26[0m
+[32m(empty line)[0m
 </script>
