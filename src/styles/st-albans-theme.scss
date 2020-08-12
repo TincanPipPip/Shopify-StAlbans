@@ -195,6 +195,7 @@ a {
 
   &.alt {
     @include btn-alt;
+    background-color: $bg;
   }
 
   &.disabled {

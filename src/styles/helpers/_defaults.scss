@@ -101,13 +101,13 @@ input[type="submit"],
 textarea,
 select {
   @include font-body;
-  color: $text;
+  color: $gold;
   resize: none;
   padding: 0.5em 1em;
   -webkit-border-radius: 0px;
   border-radius: 0;
   outline: 0;
-  border: 1px solid $text;
+  border: 1px solid $gold;
   transition: all 0.2s ease-in-out;
 }
 
