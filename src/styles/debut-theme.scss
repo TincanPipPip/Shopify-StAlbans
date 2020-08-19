@@ -3516,6 +3516,26 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-form {
   width: auto;
   padding-top: 2rem;
+
+  .btn {
+    &.alt {
+      &:hover {
+        span {
+          background-image: none;
+          margin: 0 0px 0 10px;
+          width: 100%;
+        }
+      }
+      span {
+        background-image: none;
+        margin: 0 0px 0 10px;
+        width: 100%;
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+  }
 }
 
 .product-form__controls-group {
