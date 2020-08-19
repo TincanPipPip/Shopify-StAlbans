@@ -1936,96 +1936,6 @@ a[href^="tel"] {
   color: inherit;
 }
 
-/*================ Buttons ================*/
-// .btn {
-//   @include user-select();
-//   @include prefix(appearance, none, webkit moz spec);
-//   display: inline-block;
-//   width: auto;
-//   text-decoration: none;
-//   text-align: center;
-//   vertical-align: middle;
-//   cursor: pointer;
-//   border: 1px solid transparent;
-//   border-radius: $border-radius;
-//   padding: $input-padding-top-bottom-small $input-padding-left-right-small;
-//   background-color: $color-btn-primary;
-//   color: $color-btn-primary-text;
-//   font-family: $font-stack-header;
-//   font-style: $font-style-header;
-//   font-weight: $font-weight-header;
-//   text-transform: uppercase;
-//   letter-spacing: 0.08em;
-//   white-space: normal;
-//   font-size: $font-size-base - 2;
-
-//   @include media-query($medium-up) {
-//     padding: $input-padding-top-bottom $input-padding-left-right;
-//   }
-
-//   &:not([disabled]):hover,
-//   &:focus {
-//     color: $color-btn-primary-text;
-//     background-color: $color-btn-primary-focus;
-//   }
-
-//   .icon-arrow-right,
-//   .icon-arrow-left {
-//     height: 9px;
-//   }
-
-//   &[disabled],
-//   &[aria-disabled] {
-//     cursor: default;
-//     opacity: 0.5;
-//   }
-// }
-
-.btn--secondary {
-  background-color: transparent;
-  color: $color-btn-primary;
-  border-color: $color-btn-primary;
-
-  &:not([disabled]):hover,
-  &:focus {
-    background-color: transparent;
-    color: $color-btn-primary-focus;
-    border-color: $color-btn-primary-focus;
-  }
-}
-
-.btn--secondary-accent {
-  background-color: $color-body;
-  color: $color-btn-primary;
-  border-color: $color-btn-primary;
-
-  &:not([disabled]):hover,
-  &:focus {
-    background-color: $color-body;
-    color: $color-btn-primary-focus;
-    border-color: $color-btn-primary-focus;
-  }
-}
-
-.btn--small {
-  padding: 8px 10px;
-  font-size: em(12);
-  line-height: 1;
-}
-
-.btn--tertiary {
-  background-color: transparent;
-  color: $color-small-button-text-border;
-  border-color: $color-small-button-text-border;
-
-  &:not([disabled]):hover,
-  &:focus {
-    background-color: transparent;
-    color: $color-small-button-text-border-focus;
-    border-color: $color-small-button-text-border-focus;
-  }
-}
-
 /*================ Button variations ================*/
 @include media-query($small) {
   .btn--small-wide {
@@ -2066,26 +1976,6 @@ a[href^="tel"] {
 .btn--has-icon-before {
   .icon {
     margin-right: 10px;
-  }
-}
-
-/*================ Force an input/button to look like a text link ================*/
-.text-link {
-  display: inline;
-  border: 0 none;
-  background: none;
-  padding: 0;
-  margin: 0;
-}
-
-.text-link--accent {
-  color: $color-btn-primary;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 1px;
-
-  &:not([disabled]):hover,
-  &:focus {
-    color: $color-btn-primary-focus;
   }
 }
 
@@ -2997,7 +2887,6 @@ hr {
 }
 
 .grid-view-item__image-wrapper {
-  margin: 0 auto $grid-gutter / 2;
   position: relative;
   width: 100%;
 }
@@ -3627,6 +3516,26 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-form {
   width: auto;
   padding-top: 2rem;
+
+  .btn {
+    &.alt {
+      &:hover {
+        span {
+          background-image: none;
+          margin: 0 0px 0 10px;
+          width: 100%;
+        }
+      }
+      span {
+        background-image: none;
+        margin: 0 0px 0 10px;
+        width: 100%;
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+  }
 }
 
 .product-form__controls-group {
@@ -3651,7 +3560,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
   @include media-query($large-up) {
     flex-basis: 50%;
-    padding: 0 5px;
 
     .product-single--large-image & {
       flex-basis: 100%;
@@ -4944,6 +4852,23 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 }
 
+.site-header__cart {
+  position: relative;
+  height: 110px;
+  width: 90px;
+  float: right;
+  border-left: 1px solid rgba(21, 21, 36, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .template-index & {
+    svg {
+      fill: white;
+    }
+  }
+}
+
 .site-header__search-toggle {
   display: block;
 }
@@ -4970,9 +4895,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 0.4rem;
-  top: 0.2rem;
   font-weight: bold;
   background-color: $color-btn-primary;
   color: $color-btn-primary-text;
@@ -5365,6 +5287,22 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .cart-popup {
   padding: 0.2rem 1.5rem 1rem;
+
+  .btn {
+    &.alt {
+      &:hover {
+        span {
+          background-image: none;
+        }
+      }
+      span {
+        background-image: none;
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+  }
 }
 
 .cart-popup__header {
@@ -7878,7 +7816,7 @@ $toolbar-height-small: 46px;
   &:hover,
   &:focus {
     .image-bar__overlay::before {
-      opacity: $hover-overlay-opacity;
+      opacity: 0.6;
     }
   }
 
@@ -7952,6 +7890,7 @@ $toolbar-height-small: 46px;
   width: 100%;
   text-align: center;
   text-shadow: 0 0 4px $color-text-shadow;
+  color: $color-overlay-title-text;
 }
 
 .collection-grid {

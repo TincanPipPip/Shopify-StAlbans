@@ -161,7 +161,7 @@
           {% if section_onboarding %}
             <div class="product-form">
               <div class="product-form__item product-form__item--submit{% if product.has_only_default_variant %} product-form__item--no-variants{% endif %}">
-                <button type="submit" name="add" disabled class="btn product-form__cart-submit" data-add-to-cart>
+                <button type="submit" name="add" disabled class="btn alt product-form__cart-submit" data-add-to-cart>
                   <span data-add-to-cart-text>
                       {{ 'products.product.sold_out' | t }}
                   </span>
@@ -230,7 +230,7 @@
                   <button type="submit" name="add"
                     {% unless current_variant.available %} aria-disabled="true"{% endunless %}
                     aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
-                    class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"
+                    class="btn alt product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"
                     {% if settings.enable_ajax %}aria-haspopup="dialog"{% endif %}
                     data-add-to-cart>
                     <span data-add-to-cart-text>
@@ -299,451 +299,26 @@
 
 
 <script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Product",
-  "name": {{ product.title | json }},
-  "url": {{ shop.url | append: product.url | json }},
-  {%- if product.featured_media -%}
-    {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
-    "image": [
-      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
-    ],
-  {%- endif -%}
-  "description": {{ product.description | strip_html | json }},
-  {%- if current_variant.sku != blank -%}
-    "sku": {{ current_variant.sku | json }},
-  {%- endif -%}
-  "brand": {
-    "@type": "Thing",
-    "name": {{ product.vendor | json }}
-  },
-  "offers": [
-    {%- for variant in product.variants -%}
-      {
-        "@type" : "Offer",
-        {%- if variant.sku != blank -%}
-          "sku": {{ variant.sku | json }},
-        {%- endif -%}
-        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
-        "price" : {{ variant.price | divided_by: 100.00 | json }},
-        "priceCurrency" : {{ cart.currency.iso_code | json }},
-        "url" : {{ shop.url | append: variant.url | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-  ]
-}
+
+
+[36mLine: 1[0m
+[31m{[0m
+[31m    "@context": "http://schema.org/",[0m
+[31m    "@type": "Product",[0m
+[31m    "name": {{ product.title | json }},[0m
+[31m    "url": {{ shop.url | append: product.url | json }},{%- if product.featured_media -%}[0m
+[31m        {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}[0m
+[31m        "image" : [{{ product.featured_media | img_url: media_size | prepend: "https:" | json }}],{%- endif -%}[0m
+
+[36mLine: 26[0m
+[32m(empty line)[0m
+
 </script>
 
 {% schema %}
+
 {
-  "name": {
-    "da": "Fremhævet produkt",
-    "de": "Vorgestelltes Produkt",
-    "en": "Featured product",
-    "es": "Producto destacado",
-    "fi": "Esittelyssä oleva tuote",
-    "fr": "Produit vedette",
-    "hi": "विशेष रुप से प्रदर्शित उत्पाद",
-    "it": "Prodotto in primo piano",
-    "ja": "おすすめ商品",
-    "ko": "특별 상품",
-    "nb": "Utvalgt produkt",
-    "nl": "Uitgelicht product",
-    "pt-BR": "Produto em destaque",
-    "pt-PT": "Produto em destaque",
-    "sv": "Utvald produkt",
-    "th": "สินค้าที่แนะนำ",
-    "zh-CN": "特色产品",
-    "zh-TW": "精選產品"
-  },
-  "class": "index-section index-section--featured-product",
-  "settings": [
-    {
-      "type": "product",
-      "id": "featured_product",
-      "label": {
-        "da": "Produkt",
-        "de": "Produkte",
-        "en": "Product",
-        "es": "Producto",
-        "fi": "Tuote",
-        "fr": "Produit",
-        "hi": "उत्पाद",
-        "it": "Prodotto",
-        "ja": "商品",
-        "ko": "제품",
-        "nb": "Produkt",
-        "nl": "Product",
-        "pt-BR": "Produto",
-        "pt-PT": "Produto",
-        "sv": "Produkt",
-        "th": "สินค้า",
-        "zh-CN": "产品",
-        "zh-TW": "產品"
-      }
-    },
-    {
-      "type": "checkbox",
-      "id": "show_quantity_selector",
-      "label": {
-        "da": "Vis antalsvælger",
-        "de": "Mengenauswahl anzeigen",
-        "en": "Show quantity selector",
-        "es": "Mostrar selector de cantidad",
-        "fi": "Näytä määrän valitsin",
-        "fr": "Afficher le sélecteur de quantité",
-        "hi": "मात्रा चयनकर्ता दिखाएं",
-        "it": "Mostra selettore quantità",
-        "ja": "数量セレクターを表示する",
-        "ko": "수량 선택기 표시",
-        "nb": "Vis mengdevelger",
-        "nl": "Hoeveelheidskiezer weergeven",
-        "pt-BR": "Exiba um seletor de quantidade",
-        "pt-PT": "Mostrar um seletor de quantidade",
-        "sv": "Visa kvantitetsväljare",
-        "th": "แสดงตัวเลือกจำนวน",
-        "zh-CN": "显示数量选择器",
-        "zh-TW": "顯示數量選擇器"
-      },
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_variant_labels",
-      "label": {
-        "da": "Vis variantlabels",
-        "de": "Verschiedene Etiketten anzeigen",
-        "en": "Show variant labels",
-        "es": "Mostrar etiquetas de variantes",
-        "fi": "Näytä vaihtoehtoiset tarrat",
-        "fr": "Afficher le nom des variantes",
-        "hi": "वेरिएंट लेबल दिखाएं",
-        "it": "Mostra etichette varianti",
-        "ja": "バリエーションのラベルを表示する",
-        "ko": "이형 상품 레이블 표시",
-        "nb": "Vis variantetiketter",
-        "nl": "Variantlabels weergeven",
-        "pt-BR": "Exibir etiquetas de variantes",
-        "pt-PT": "Mostrar etiquetas de variantes",
-        "sv": "Visa variantetiketter",
-        "th": "แสดงป้ายกำกับตัวเลือกสินค้า",
-        "zh-CN": "显示多属性标签",
-        "zh-TW": "顯示子類選項標籤"
-      },
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "label": {
-        "da": "Vis leverandør",
-        "de": "Lieferant anzeigen",
-        "en": "Show vendor",
-        "es": "Mostrar proveedor",
-        "fi": "Näytä myyjä",
-        "fr": "Afficher le nom du vendeur",
-        "hi": "विक्रेता दिखाएं",
-        "it": "Mostra fornitore",
-        "ja": "販売元を表示する",
-        "ko": "공급업체 표시",
-        "nb": "Vis leverandør",
-        "nl": "Leverancier weergeven",
-        "pt-BR": "Exibir fornecedor",
-        "pt-PT": "Mostrar fornecedor",
-        "sv": "Visa säljare",
-        "th": "แสดงผู้ขาย",
-        "zh-CN": "显示厂商",
-        "zh-TW": "顯示廠商"
-      },
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_payment_button",
-      "label": {
-        "da": "Vis dynamisk betalingsknap",
-        "de": "Dynamischen Checkout Button anzeigen",
-        "en": "Show dynamic checkout button",
-        "es": "Mostrar botón de pago dinámico",
-        "fi": "Näytä dynaaminen kassapainike",
-        "fr": "Afficher le bouton de paiement dynamique",
-        "hi": "डायनेमिक चेकआउट बटन दिखाएं",
-        "it": "Mostra pulsante di check-out dinamico",
-        "ja": "動的チェックアウトボタンを表示する",
-        "ko": "동적 결제 버튼 표시",
-        "nb": "Vis dynamisk knapp for å gå til kassen",
-        "nl": "Dynamische betaalknop weergeven",
-        "pt-BR": "Exibir botão de checkout dinâmico",
-        "pt-PT": "Mostrar o botão dinâmico de finalização da compra",
-        "sv": "Visa dynamiska utcheckningsknappar",
-        "th": "แสดงปุ่มชำระเงินแบบไดนามิก",
-        "zh-CN": "显示动态结账按钮",
-        "zh-TW": "顯示動態結帳按鈕"
-      },
-      "info": {
-        "da": "Den enkelte kunde vil se sin foretrukne betalingsmetode blandt dem, der er tilgængelige i din butik, f.eks. PayPal eller Apple Pay. [Få mere at vide](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in deinem Shop verfügbaren Zahlungsmethoden wie PayPal oder Apple Pay. [Mehr Informationen](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "fi": "Kukin asiakas näkee ensisijaisen valintansa kauppasi tarjoamista maksutavoista, esim. PayPal tai Apple Pay. [Lisätietoja](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "hi": "प्रत्येक ग्राहक आपके स्टोर पर उपलब्ध अपनी पसंदीदा भुगतान की विधि देखेंगे जैसे PayPal या Apple Pay. [अधिक जानें](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "ja": "PayPalやApple Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[詳しくはこちら](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "ko": "각 고객은 PayPal 또는 Apple Pay와 같이 스토어에서 사용 가능한 지불 방법을 확인할 수 있습니다. [자세히 알아보기](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "nb": "Hver enkelt kunde vil se sin foretrukne betalingsmåte blant de som er tilgjengelig i butikken din, som PayPal eller Apple Pay. [Finn ut mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "nl": "Elke klant ziet zijn of haar beschikbare voorkeursmethode om af te rekenen, zoals PayPal of Apple Pay. [Meer informatie](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "pt-BR": "Cada cliente verá a forma de pagamento preferencial dele dentre as disponíveis na loja, como PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "pt-PT": "Cada cliente irá ver o seu método de pagamento preferido entre os disponíveis na loja, como o PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "sv": "Varje kund kommer att se den föredragna betalningsmetoden från de som finns tillgängliga i din butik, till exempel PayPal eller Apple Pay. [Läs mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "th": "ลูกค้าแต่ละรายจะเห็นวิธีการชำระเงินที่ต้องการจากวิธีที่ใช้ได้ในร้านค้าของคุณ เช่น PayPal หรือ Apple Pay [ดูข้อมูลเพิ่มเติม](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "zh-CN": "每位客户都可在您商店提供的付款方式中看到他们的首选付款方式，例如 PayPal 或 Apple Pay。[了解详细信息](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-        "zh-TW": "每位顧客都可以在您商店內開放使用的付款方式中看見他們偏好使用的方式，如 PayPal、Apple Pay 等。[深入瞭解](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
-      },
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_share_buttons",
-      "label": {
-        "da": "Vis knapper til deling på sociale medier",
-        "de": "Buttons für Social Media anzeigen",
-        "en": "Show social sharing buttons",
-        "es": "Mostrar botones para compartir en redes sociales",
-        "fi": "Näytä sosiaalisen median jakamispainikkeet",
-        "fr": "Afficher les options de partage sur les médias sociaux",
-        "hi": "सोशल शेयरिंग बटन दिखाएं",
-        "it": "Mostra i pulsanti per la condivisione sui social",
-        "ja": "ソーシャルメディアでの共有ボタンを表示する",
-        "ko": "소셜 공유 버튼 표시",
-        "nb": "Vis knapper for deling på sosiale medier",
-        "nl": "Knoppen voor sociaal delen weergeven",
-        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
-        "pt-PT": "Mostrar botões de partilha nas redes sociais",
-        "sv": "Visa knappar för delning i sociala medier",
-        "th": "แสดงปุ่มสำหรับแชร์ลงโซเชียล",
-        "zh-CN": "显示社交分享按钮",
-        "zh-TW": "顯示社群分享按鈕"
-      },
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": {
-        "da": "Medie",
-        "de": "Medien",
-        "en": "Media",
-        "es": "Elementos multimedia",
-        "fi": "Media",
-        "fr": "Support multimédia",
-        "hi": "मीडिया",
-        "it": "Media",
-        "ja": "メディア",
-        "ko": "미디어",
-        "nb": "Medier",
-        "nl": "Media",
-        "pt-BR": "Mídia",
-        "pt-PT": "Multimédia",
-        "sv": "Media",
-        "th": "สื่อ",
-        "zh-CN": "媒体",
-        "zh-TW": "媒體"
-      },
-      "info": {
-        "da": "Få mere at vide om [media types](https://help.shopify.com/manual/products/product-media)",
-        "de": "Mehr Informationen über [Medientypen ](https://help.shopify.com/manual/products/product-media)",
-        "en": "Learn more about [media types](https://help.shopify.com/manual/products/product-media)",
-        "es": "Más información sobre [tipos de archivos multimedia](https://help.shopify.com/manual/products/product-media)",
-        "fi": "Lue lisää [mediatyypeistä](https://help.shopify.com/manual/products/product-media)",
-        "fr": "En savoir plus sur les [types de supports multimédia](https://help.shopify.com/manual/products/product-media)",
-        "hi": "[मीडिया प्रकार](https://help.shopify.com/manual/products/product-media) के बारे में और जानें",
-        "it": "Scopri di più sulle [tipologie di file multimediali](https://help.shopify.com/manual/products/product-media)",
-        "ja": "[メディアのタイプ](https://help.shopify.com/manual/products/product-media) について詳しくはこちら",
-        "ko": "[미디어 유형](https://help.shopify.com/manual/products/product-media)에 대해 자세히 알아보기",
-        "nb": "Lær mer om [medietyper](https://help.shopify.com/manual/products/product-media)",
-        "nl": "Meer informatie over [mediatypen](https://help.shopify.com/manual/products/product-media)",
-        "pt-BR": "Saiba mais sobre [tipos de mídia](https://help.shopify.com/manual/products/product-media)",
-        "pt-PT": "Saiba mais sobre [media types](https://help.shopify.com/manual/products/product-media)",
-        "sv": "Läs mer om [mediatyper](https://help.shopify.com/manual/products/product-media)",
-        "th": "ดูข้อมูลเพิ่มเติมเกี่ยวกับ [ประเภทของสื่อ](https://help.shopify.com/manual/products/product-media)",
-        "zh-CN": "详细了解[媒体类型](https://help.shopify.com/manual/products/product-media)",
-        "zh-TW": "深入瞭解 [媒體類型](https://help.shopify.com/manual/products/product-media)"
-      }
-    },
-    {
-      "type": "select",
-      "id": "media_size",
-      "label": {
-        "da": "Størrelse",
-        "de": "Größe",
-        "en": "Size",
-        "es": "Tamaño",
-        "fi": "Koko",
-        "fr": "Taille",
-        "hi": "आकार",
-        "it": "Dimensione",
-        "ja": "サイズ",
-        "ko": "사이즈",
-        "nb": "Størrelse",
-        "nl": "Grootte",
-        "pt-BR": "Tamanho",
-        "pt-PT": "Tamanho",
-        "sv": "Storlek",
-        "th": "ขนาด",
-        "zh-CN": "大小",
-        "zh-TW": "尺寸"
-      },
-      "options": [
-        {
-          "value": "small",
-          "label": {
-            "da": "Lille",
-            "de": "Klein",
-            "en": "Small",
-            "es": "Pequeño",
-            "fi": "Pieni",
-            "fr": "Petit",
-            "hi": "छोटा",
-            "it": "Piccolo",
-            "ja": "スモール",
-            "ko": "스몰",
-            "nb": "Liten",
-            "nl": "Klein",
-            "pt-BR": "Pequeno",
-            "pt-PT": "Pequeno",
-            "sv": "Liten",
-            "th": "เล็ก",
-            "zh-CN": "小",
-            "zh-TW": "小型"
-          }
-        },
-        {
-          "value": "medium",
-          "label": {
-            "da": "Medium",
-            "de": "Mittel",
-            "en": "Medium",
-            "es": "Mediano",
-            "fi": "Keskisuuri",
-            "fr": "Moyenne",
-            "hi": "मध्यम",
-            "it": "Medio",
-            "ja": "中",
-            "ko": "보통",
-            "nb": "Middels",
-            "nl": "Gemiddeld",
-            "pt-BR": "Médio",
-            "pt-PT": "Médio",
-            "sv": "Medium",
-            "th": "ปานกลาง",
-            "zh-CN": "中等",
-            "zh-TW": "中等"
-          }
-        },
-        {
-          "value": "large",
-          "label": {
-            "da": "Stor",
-            "de": "Groß",
-            "en": "Large",
-            "es": "Grande",
-            "fi": "Suuri",
-            "fr": "Grande",
-            "hi": "बड़ा",
-            "it": "Grande",
-            "ja": "大",
-            "ko": "라지",
-            "nb": "Stor",
-            "nl": "Groot",
-            "pt-BR": "Grande",
-            "pt-PT": "Grande",
-            "sv": "Stor",
-            "th": "ใหญ่",
-            "zh-CN": "大",
-            "zh-TW": "大型"
-          }
-        },
-        {
-          "value": "full",
-          "label": {
-            "da": "Ekstra stor",
-            "de": "Extra groß",
-            "en": "Extra large",
-            "es": "Extra grande",
-            "fi": "Erikoissuuri",
-            "fr": "Très grande",
-            "hi": "अतिरिक्त बड़ा",
-            "it": "Extra large",
-            "ja": "特大",
-            "ko": "특대",
-            "nb": "Ekstra stort",
-            "nl": "Extra groot",
-            "pt-BR": "Extra grande",
-            "pt-PT": "Extra grande",
-            "sv": "Extra stor",
-            "th": "ขนาดใหญ่พิเศษ",
-            "zh-CN": "特大",
-            "zh-TW": "超大型"
-          }
-        }
-      ],
-      "default": "medium"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_image_zoom",
-      "label": {
-        "da": "Aktivér billedzoom",
-        "de": "Foto-Zoom zulassen",
-        "en": "Enable image zoom",
-        "es": "Habilitar zoom de imagen",
-        "fi": "Ota kuvan zoomaus käyttöön",
-        "fr": "Activer le zoom d'image",
-        "hi": "इमेज ज़ूम सक्षम करें",
-        "it": "Abilita lo zoom dell'immagine",
-        "ja": "画像ズームを有効にする",
-        "ko": "이미지 확대 사용",
-        "nb": "Aktiver bildezoom",
-        "nl": "Inzoomen op afbeelding inschakelen",
-        "pt-BR": "Habilitar o zoom da imagem",
-        "pt-PT": "Ativar o zoom da imagem",
-        "sv": "Aktivera bildzoom",
-        "th": "เปิดใช้การซูมภาพ",
-        "zh-CN": "启用图片缩放",
-        "zh-TW": "啟用圖片縮放"
-      },
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_video_looping",
-      "label": {
-        "da": "Aktivér looping af videoer",
-        "de": "Videschleife aktivieren",
-        "en": "Enable video looping",
-        "es": "Habilitar la reproducción de video en bucle",
-        "fi": "Ota käyttöön videosilmukka",
-        "fr": "Activer le bouclage de la vidéo",
-        "hi": "वीडियो लूपिंग सक्षम करें",
-        "it": "Abilita la riproduzione in loop dei video",
-        "ja": "ビデオのループを有効にする",
-        "ko": "동영상 루프 활성화",
-        "nb": "Aktiver løkkeavspilling av video",
-        "nl": "Video-looping inschakelen",
-        "pt-BR": "Habilitar loop de vídeo",
-        "pt-PT": "Ativar ciclo de vídeo",
-        "sv": "Aktivera video-loopning",
-        "th": "เปิดใช้งานการวนซ้ำวิดีโอ",
-        "zh-CN": "启用视频循环",
-        "zh-TW": "啟用影片循環功能"
-      },
-      "default": false
-    }
-  ],
-  "presets": [
-    {
-      "name": {
+    "name": {
         "da": "Fremhævet produkt",
         "de": "Vorgestelltes Produkt",
         "en": "Featured product",
@@ -762,28 +337,423 @@
         "th": "สินค้าที่แนะนำ",
         "zh-CN": "特色产品",
         "zh-TW": "精選產品"
-      },
-      "category": {
-        "da": "Produkt",
-        "de": "Produkte",
-        "en": "Product",
-        "es": "Producto",
-        "fi": "Tuote",
-        "fr": "Produit",
-        "hi": "उत्पाद",
-        "it": "Prodotto",
-        "ja": "商品",
-        "ko": "제품",
-        "nb": "Produkt",
-        "nl": "Product",
-        "pt-BR": "Produto",
-        "pt-PT": "Produto",
-        "sv": "Produkt",
-        "th": "สินค้า",
-        "zh-CN": "产品",
-        "zh-TW": "產品"
-      }
-    }
-  ]
+    },
+    "class": "index-section index-section--featured-product",
+    "settings": [
+        {
+            "type": "product",
+            "id": "featured_product",
+            "label": {
+                "da": "Produkt",
+                "de": "Produkte",
+                "en": "Product",
+                "es": "Producto",
+                "fi": "Tuote",
+                "fr": "Produit",
+                "hi": "उत्पाद",
+                "it": "Prodotto",
+                "ja": "商品",
+                "ko": "제품",
+                "nb": "Produkt",
+                "nl": "Product",
+                "pt-BR": "Produto",
+                "pt-PT": "Produto",
+                "sv": "Produkt",
+                "th": "สินค้า",
+                "zh-CN": "产品",
+                "zh-TW": "產品"
+            }
+        }, {
+            "type": "checkbox",
+            "id": "show_quantity_selector",
+            "label": {
+                "da": "Vis antalsvælger",
+                "de": "Mengenauswahl anzeigen",
+                "en": "Show quantity selector",
+                "es": "Mostrar selector de cantidad",
+                "fi": "Näytä määrän valitsin",
+                "fr": "Afficher le sélecteur de quantité",
+                "hi": "मात्रा चयनकर्ता दिखाएं",
+                "it": "Mostra selettore quantità",
+                "ja": "数量セレクターを表示する",
+                "ko": "수량 선택기 표시",
+                "nb": "Vis mengdevelger",
+                "nl": "Hoeveelheidskiezer weergeven",
+                "pt-BR": "Exiba um seletor de quantidade",
+                "pt-PT": "Mostrar um seletor de quantidade",
+                "sv": "Visa kvantitetsväljare",
+                "th": "แสดงตัวเลือกจำนวน",
+                "zh-CN": "显示数量选择器",
+                "zh-TW": "顯示數量選擇器"
+            },
+            "default": false
+        }, {
+            "type": "checkbox",
+            "id": "show_variant_labels",
+            "label": {
+                "da": "Vis variantlabels",
+                "de": "Verschiedene Etiketten anzeigen",
+                "en": "Show variant labels",
+                "es": "Mostrar etiquetas de variantes",
+                "fi": "Näytä vaihtoehtoiset tarrat",
+                "fr": "Afficher le nom des variantes",
+                "hi": "वेरिएंट लेबल दिखाएं",
+                "it": "Mostra etichette varianti",
+                "ja": "バリエーションのラベルを表示する",
+                "ko": "이형 상품 레이블 표시",
+                "nb": "Vis variantetiketter",
+                "nl": "Variantlabels weergeven",
+                "pt-BR": "Exibir etiquetas de variantes",
+                "pt-PT": "Mostrar etiquetas de variantes",
+                "sv": "Visa variantetiketter",
+                "th": "แสดงป้ายกำกับตัวเลือกสินค้า",
+                "zh-CN": "显示多属性标签",
+                "zh-TW": "顯示子類選項標籤"
+            },
+            "default": true
+        }, {
+            "type": "checkbox",
+            "id": "show_vendor",
+            "label": {
+                "da": "Vis leverandør",
+                "de": "Lieferant anzeigen",
+                "en": "Show vendor",
+                "es": "Mostrar proveedor",
+                "fi": "Näytä myyjä",
+                "fr": "Afficher le nom du vendeur",
+                "hi": "विक्रेता दिखाएं",
+                "it": "Mostra fornitore",
+                "ja": "販売元を表示する",
+                "ko": "공급업체 표시",
+                "nb": "Vis leverandør",
+                "nl": "Leverancier weergeven",
+                "pt-BR": "Exibir fornecedor",
+                "pt-PT": "Mostrar fornecedor",
+                "sv": "Visa säljare",
+                "th": "แสดงผู้ขาย",
+                "zh-CN": "显示厂商",
+                "zh-TW": "顯示廠商"
+            },
+            "default": false
+        }, {
+            "type": "checkbox",
+            "id": "enable_payment_button",
+            "label": {
+                "da": "Vis dynamisk betalingsknap",
+                "de": "Dynamischen Checkout Button anzeigen",
+                "en": "Show dynamic checkout button",
+                "es": "Mostrar botón de pago dinámico",
+                "fi": "Näytä dynaaminen kassapainike",
+                "fr": "Afficher le bouton de paiement dynamique",
+                "hi": "डायनेमिक चेकआउट बटन दिखाएं",
+                "it": "Mostra pulsante di check-out dinamico",
+                "ja": "動的チェックアウトボタンを表示する",
+                "ko": "동적 결제 버튼 표시",
+                "nb": "Vis dynamisk knapp for å gå til kassen",
+                "nl": "Dynamische betaalknop weergeven",
+                "pt-BR": "Exibir botão de checkout dinâmico",
+                "pt-PT": "Mostrar o botão dinâmico de finalização da compra",
+                "sv": "Visa dynamiska utcheckningsknappar",
+                "th": "แสดงปุ่มชำระเงินแบบไดนามิก",
+                "zh-CN": "显示动态结账按钮",
+                "zh-TW": "顯示動態結帳按鈕"
+            },
+            "info": {
+                "da": "Den enkelte kunde vil se sin foretrukne betalingsmetode blandt dem, der er tilgængelige i din butik, f.eks. PayPal eller Apple Pay. [Få mere at vide](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in deinem Shop verfügbaren Zahlungsmethoden wie PayPal oder Apple Pay. [Mehr Informationen](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "fi": "Kukin asiakas näkee ensisijaisen valintansa kauppasi tarjoamista maksutavoista, esim. PayPal tai Apple Pay. [Lisätietoja](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "hi": "प्रत्येक ग्राहक आपके स्टोर पर उपलब्ध अपनी पसंदीदा भुगतान की विधि देखेंगे जैसे PayPal या Apple Pay. [अधिक जानें](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "ja": "PayPalやApple Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[詳しくはこちら](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "ko": "각 고객은 PayPal 또는 Apple Pay와 같이 스토어에서 사용 가능한 지불 방법을 확인할 수 있습니다. [자세히 알아보기](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "nb": "Hver enkelt kunde vil se sin foretrukne betalingsmåte blant de som er tilgjengelig i butikken din, som PayPal eller Apple Pay. [Finn ut mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "nl": "Elke klant ziet zijn of haar beschikbare voorkeursmethode om af te rekenen, zoals PayPal of Apple Pay. [Meer informatie](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "pt-BR": "Cada cliente verá a forma de pagamento preferencial dele dentre as disponíveis na loja, como PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "pt-PT": "Cada cliente irá ver o seu método de pagamento preferido entre os disponíveis na loja, como o PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "sv": "Varje kund kommer att se den föredragna betalningsmetoden från de som finns tillgängliga i din butik, till exempel PayPal eller Apple Pay. [Läs mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "th": "ลูกค้าแต่ละรายจะเห็นวิธีการชำระเงินที่ต้องการจากวิธีที่ใช้ได้ในร้านค้าของคุณ เช่น PayPal หรือ Apple Pay [ดูข้อมูลเพิ่มเติม](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "zh-CN": "每位客户都可在您商店提供的付款方式中看到他们的首选付款方式，例如 PayPal 或 Apple Pay。[了解详细信息](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "zh-TW": "每位顧客都可以在您商店內開放使用的付款方式中看見他們偏好使用的方式，如 PayPal、Apple Pay 等。[深入瞭解](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+            },
+            "default": true
+        }, {
+            "type": "checkbox",
+            "id": "show_share_buttons",
+            "label": {
+                "da": "Vis knapper til deling på sociale medier",
+                "de": "Buttons für Social Media anzeigen",
+                "en": "Show social sharing buttons",
+                "es": "Mostrar botones para compartir en redes sociales",
+                "fi": "Näytä sosiaalisen median jakamispainikkeet",
+                "fr": "Afficher les options de partage sur les médias sociaux",
+                "hi": "सोशल शेयरिंग बटन दिखाएं",
+                "it": "Mostra i pulsanti per la condivisione sui social",
+                "ja": "ソーシャルメディアでの共有ボタンを表示する",
+                "ko": "소셜 공유 버튼 표시",
+                "nb": "Vis knapper for deling på sosiale medier",
+                "nl": "Knoppen voor sociaal delen weergeven",
+                "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+                "pt-PT": "Mostrar botões de partilha nas redes sociais",
+                "sv": "Visa knappar för delning i sociala medier",
+                "th": "แสดงปุ่มสำหรับแชร์ลงโซเชียล",
+                "zh-CN": "显示社交分享按钮",
+                "zh-TW": "顯示社群分享按鈕"
+            },
+            "default": true
+        }, {
+            "type": "header",
+            "content": {
+                "da": "Medie",
+                "de": "Medien",
+                "en": "Media",
+                "es": "Elementos multimedia",
+                "fi": "Media",
+                "fr": "Support multimédia",
+                "hi": "मीडिया",
+                "it": "Media",
+                "ja": "メディア",
+                "ko": "미디어",
+                "nb": "Medier",
+                "nl": "Media",
+                "pt-BR": "Mídia",
+                "pt-PT": "Multimédia",
+                "sv": "Media",
+                "th": "สื่อ",
+                "zh-CN": "媒体",
+                "zh-TW": "媒體"
+            },
+            "info": {
+                "da": "Få mere at vide om [media types](https://help.shopify.com/manual/products/product-media)",
+                "de": "Mehr Informationen über [Medientypen ](https://help.shopify.com/manual/products/product-media)",
+                "en": "Learn more about [media types](https://help.shopify.com/manual/products/product-media)",
+                "es": "Más información sobre [tipos de archivos multimedia](https://help.shopify.com/manual/products/product-media)",
+                "fi": "Lue lisää [mediatyypeistä](https://help.shopify.com/manual/products/product-media)",
+                "fr": "En savoir plus sur les [types de supports multimédia](https://help.shopify.com/manual/products/product-media)",
+                "hi": "[मीडिया प्रकार](https://help.shopify.com/manual/products/product-media) के बारे में और जानें",
+                "it": "Scopri di più sulle [tipologie di file multimediali](https://help.shopify.com/manual/products/product-media)",
+                "ja": "[メディアのタイプ](https://help.shopify.com/manual/products/product-media) について詳しくはこちら",
+                "ko": "[미디어 유형](https://help.shopify.com/manual/products/product-media)에 대해 자세히 알아보기",
+                "nb": "Lær mer om [medietyper](https://help.shopify.com/manual/products/product-media)",
+                "nl": "Meer informatie over [mediatypen](https://help.shopify.com/manual/products/product-media)",
+                "pt-BR": "Saiba mais sobre [tipos de mídia](https://help.shopify.com/manual/products/product-media)",
+                "pt-PT": "Saiba mais sobre [media types](https://help.shopify.com/manual/products/product-media)",
+                "sv": "Läs mer om [mediatyper](https://help.shopify.com/manual/products/product-media)",
+                "th": "ดูข้อมูลเพิ่มเติมเกี่ยวกับ [ประเภทของสื่อ](https://help.shopify.com/manual/products/product-media)",
+                "zh-CN": "详细了解[媒体类型](https://help.shopify.com/manual/products/product-media)",
+                "zh-TW": "深入瞭解 [媒體類型](https://help.shopify.com/manual/products/product-media)"
+            }
+        }, {
+            "type": "select",
+            "id": "media_size",
+            "label": {
+                "da": "Størrelse",
+                "de": "Größe",
+                "en": "Size",
+                "es": "Tamaño",
+                "fi": "Koko",
+                "fr": "Taille",
+                "hi": "आकार",
+                "it": "Dimensione",
+                "ja": "サイズ",
+                "ko": "사이즈",
+                "nb": "Størrelse",
+                "nl": "Grootte",
+                "pt-BR": "Tamanho",
+                "pt-PT": "Tamanho",
+                "sv": "Storlek",
+                "th": "ขนาด",
+                "zh-CN": "大小",
+                "zh-TW": "尺寸"
+            },
+            "options": [
+                {
+                    "value": "small",
+                    "label": {
+                        "da": "Lille",
+                        "de": "Klein",
+                        "en": "Small",
+                        "es": "Pequeño",
+                        "fi": "Pieni",
+                        "fr": "Petit",
+                        "hi": "छोटा",
+                        "it": "Piccolo",
+                        "ja": "スモール",
+                        "ko": "스몰",
+                        "nb": "Liten",
+                        "nl": "Klein",
+                        "pt-BR": "Pequeno",
+                        "pt-PT": "Pequeno",
+                        "sv": "Liten",
+                        "th": "เล็ก",
+                        "zh-CN": "小",
+                        "zh-TW": "小型"
+                    }
+                }, {
+                    "value": "medium",
+                    "label": {
+                        "da": "Medium",
+                        "de": "Mittel",
+                        "en": "Medium",
+                        "es": "Mediano",
+                        "fi": "Keskisuuri",
+                        "fr": "Moyenne",
+                        "hi": "मध्यम",
+                        "it": "Medio",
+                        "ja": "中",
+                        "ko": "보통",
+                        "nb": "Middels",
+                        "nl": "Gemiddeld",
+                        "pt-BR": "Médio",
+                        "pt-PT": "Médio",
+                        "sv": "Medium",
+                        "th": "ปานกลาง",
+                        "zh-CN": "中等",
+                        "zh-TW": "中等"
+                    }
+                }, {
+                    "value": "large",
+                    "label": {
+                        "da": "Stor",
+                        "de": "Groß",
+                        "en": "Large",
+                        "es": "Grande",
+                        "fi": "Suuri",
+                        "fr": "Grande",
+                        "hi": "बड़ा",
+                        "it": "Grande",
+                        "ja": "大",
+                        "ko": "라지",
+                        "nb": "Stor",
+                        "nl": "Groot",
+                        "pt-BR": "Grande",
+                        "pt-PT": "Grande",
+                        "sv": "Stor",
+                        "th": "ใหญ่",
+                        "zh-CN": "大",
+                        "zh-TW": "大型"
+                    }
+                }, {
+                    "value": "full",
+                    "label": {
+                        "da": "Ekstra stor",
+                        "de": "Extra groß",
+                        "en": "Extra large",
+                        "es": "Extra grande",
+                        "fi": "Erikoissuuri",
+                        "fr": "Très grande",
+                        "hi": "अतिरिक्त बड़ा",
+                        "it": "Extra large",
+                        "ja": "特大",
+                        "ko": "특대",
+                        "nb": "Ekstra stort",
+                        "nl": "Extra groot",
+                        "pt-BR": "Extra grande",
+                        "pt-PT": "Extra grande",
+                        "sv": "Extra stor",
+                        "th": "ขนาดใหญ่พิเศษ",
+                        "zh-CN": "特大",
+                        "zh-TW": "超大型"
+                    }
+                }
+            ],
+            "default": "medium"
+        }, {
+            "type": "checkbox",
+            "id": "enable_image_zoom",
+            "label": {
+                "da": "Aktivér billedzoom",
+                "de": "Foto-Zoom zulassen",
+                "en": "Enable image zoom",
+                "es": "Habilitar zoom de imagen",
+                "fi": "Ota kuvan zoomaus käyttöön",
+                "fr": "Activer le zoom d'image",
+                "hi": "इमेज ज़ूम सक्षम करें",
+                "it": "Abilita lo zoom dell'immagine",
+                "ja": "画像ズームを有効にする",
+                "ko": "이미지 확대 사용",
+                "nb": "Aktiver bildezoom",
+                "nl": "Inzoomen op afbeelding inschakelen",
+                "pt-BR": "Habilitar o zoom da imagem",
+                "pt-PT": "Ativar o zoom da imagem",
+                "sv": "Aktivera bildzoom",
+                "th": "เปิดใช้การซูมภาพ",
+                "zh-CN": "启用图片缩放",
+                "zh-TW": "啟用圖片縮放"
+            },
+            "default": true
+        }, {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": {
+                "da": "Aktivér looping af videoer",
+                "de": "Videschleife aktivieren",
+                "en": "Enable video looping",
+                "es": "Habilitar la reproducción de video en bucle",
+                "fi": "Ota käyttöön videosilmukka",
+                "fr": "Activer le bouclage de la vidéo",
+                "hi": "वीडियो लूपिंग सक्षम करें",
+                "it": "Abilita la riproduzione in loop dei video",
+                "ja": "ビデオのループを有効にする",
+                "ko": "동영상 루프 활성화",
+                "nb": "Aktiver løkkeavspilling av video",
+                "nl": "Video-looping inschakelen",
+                "pt-BR": "Habilitar loop de vídeo",
+                "pt-PT": "Ativar ciclo de vídeo",
+                "sv": "Aktivera video-loopning",
+                "th": "เปิดใช้งานการวนซ้ำวิดีโอ",
+                "zh-CN": "启用视频循环",
+                "zh-TW": "啟用影片循環功能"
+            },
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "da": "Fremhævet produkt",
+                "de": "Vorgestelltes Produkt",
+                "en": "Featured product",
+                "es": "Producto destacado",
+                "fi": "Esittelyssä oleva tuote",
+                "fr": "Produit vedette",
+                "hi": "विशेष रुप से प्रदर्शित उत्पाद",
+                "it": "Prodotto in primo piano",
+                "ja": "おすすめ商品",
+                "ko": "특별 상품",
+                "nb": "Utvalgt produkt",
+                "nl": "Uitgelicht product",
+                "pt-BR": "Produto em destaque",
+                "pt-PT": "Produto em destaque",
+                "sv": "Utvald produkt",
+                "th": "สินค้าที่แนะนำ",
+                "zh-CN": "特色产品",
+                "zh-TW": "精選產品"
+            },
+            "category": {
+                "da": "Produkt",
+                "de": "Produkte",
+                "en": "Product",
+                "es": "Producto",
+                "fi": "Tuote",
+                "fr": "Produit",
+                "hi": "उत्पाद",
+                "it": "Prodotto",
+                "ja": "商品",
+                "ko": "제품",
+                "nb": "Produkt",
+                "nl": "Product",
+                "pt-BR": "Produto",
+                "pt-PT": "Produto",
+                "sv": "Produkt",
+                "th": "สินค้า",
+                "zh-CN": "产品",
+                "zh-TW": "產品"
+            }
+        }
+    ]
 }
+
 {% endschema %}

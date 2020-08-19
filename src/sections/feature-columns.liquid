@@ -37,9 +37,6 @@
                                                     {% endif %}
 
                                                     <div class="teaser__content">
-                                                        <div class="venue">
-                                                            St Albans Museum + Gallery
-                                                        </div>
 
                                                         {% if block.settings.title != blank %}
                                                             <h2>
@@ -69,6 +66,7 @@
 
                                                             <a href="{{ block.settings.button_link }}" class="btn book" aria-label="{{ ariaLabel | escape }}" target="_blank">
                                                                 {{- block.settings.button_label | escape -}}
+                                                                <span></span>
                                                             </a>
                                                         {% endif %}
 

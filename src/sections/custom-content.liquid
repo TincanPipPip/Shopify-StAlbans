@@ -1,11 +1,6 @@
 <div class="row">
 
     <div class="large-12 columns end">
-        {% if section.settings.title != blank %}
-            <div class="section-header text-center">
-                <h4 class="h2">{{ section.settings.title | escape }}</h4>
-            </div>
-        {% endif %}
 
         {%- assign block_width_mobile = '' -%}
 
@@ -254,6 +249,7 @@
                                         <li>
                                             <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
                                                 {{ 'blogs.article.read_more' | t }}
+                                                <span></span>
                                             </a>
                                         </li>
 
@@ -301,6 +297,7 @@
                                         <li>
                                             <a class="btn btn--tertiary btn--small" href="#">
                                                 {{ 'blogs.article.read_more' | t }}
+                                                <span></span>
                                             </a>
                                         </li>
 
