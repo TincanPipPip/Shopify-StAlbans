@@ -230,22 +230,14 @@ $bump: 0.9375em;
 
 @font-face {
   font-family: "KfrW-Rg";
-  src: url("../fonts/kfrw-rg.eot");
-  src: url("../fonts/kfrw-rg.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/kfrw-rg.woff2") format("woff2"),
-    url("../fonts/kfrw-v.woff") format("woff"),
-    url("../fonts/kfrw-rg.ttf") format("truetype");
+  src: url("kfrw-rg.woff2") format("woff2"), url("kfrw-rg.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "KfrW-Bd";
-  src: url("../fonts/kfrw-bd.eot");
-  src: url("../fonts/kfrw-bd.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/kfrw-bd.woff2") format("woff2"),
-    url("../fonts/kfrw-bd.woff") format("woff"),
-    url("../fonts/kfrw-bd.ttf") format("truetype");
+  src: url("kfrw-bd.woff2") format("woff2"), url("kfrw-bd.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

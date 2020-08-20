@@ -594,16 +594,6 @@ $font-stack-cart-notification: "HelveticaNeue", "Helvetica Neue", Helvetica,
 
 $font-size-mobile-input: 16px; // min 16px to prevent zooming
 
-@font-face {
-  font-family: "KfrW-Bd";
-  src: url("kfrw-bd.woff2") format("woff2"), url("kfrw-bd.woff") format("woff");
-}
-
-@font-face {
-  font-family: "KfrW-Rg";
-  src: url("kfrw-rg.woff2") format("woff2"), url("kfrw-rg.woff") format("woff");
-}
-
 /*================ Gift Cards ================*/
 $color-giftcard-tooltip-fallback: #333;
 $color-giftcard-light: #fff;
@@ -8342,43 +8332,6 @@ $transition-controls-video: color 0.2s $ease-transition,
 
 .video-control__play-wrapper--with-text {
   margin-top: $grid-gutter;
-}
-
-.video-control__play {
-  display: flex;
-  justify-content: center;
-  visibility: visible;
-  opacity: 1;
-  width: $video-button-wrapper-size;
-  height: $video-button-wrapper-size;
-  border-radius: $video-button-wrapper-size / 2;
-  position: relative;
-  margin: 0 auto;
-  padding: 5px;
-  pointer-events: none;
-
-  .video-background-wrapper & {
-    top: 50%;
-    @include transform(translateY(-50%));
-  }
-
-  .icon {
-    opacity: 0.5;
-  }
-
-  .video-is-loaded & {
-    pointer-events: auto;
-
-    .icon {
-      opacity: 1;
-    }
-  }
-
-  .video-is-playing & {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 
 // Video loader shown when initializing
