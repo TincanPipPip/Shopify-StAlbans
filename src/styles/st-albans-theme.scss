@@ -3028,3 +3028,67 @@ address {
     color: $color-btn-primary-focus;
   }
 }
+
+.video-control__play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  width: $video-button-wrapper-size;
+  height: $video-button-wrapper-size;
+  border-radius: $video-button-wrapper-size / 2;
+  position: relative;
+  margin: 0 auto;
+  padding: 5px;
+  pointer-events: none;
+
+  .video-background-wrapper & {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  .icon {
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+  }
+
+  .video-is-loaded & {
+    pointer-events: auto;
+
+    .icon {
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .video-is-playing & {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.btn {
+  &.alt {
+    &.no-arrow {
+      &:hover {
+        span {
+          background-image: none;
+          margin: 0 0px 0 10px;
+          width: 100%;
+        }
+      }
+      span {
+        background-image: none;
+        margin: 0 0px 0 10px;
+        width: 100%;
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+  }
+}
