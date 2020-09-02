@@ -25,7 +25,7 @@
         {%- assign block_image = block.settings.image -%}
         <div class="node node__page node--story clearfix" {{ block.shopify_attributes }}>
             {%- if block.settings.button_link != blank -%}
-                <a href="{{ block.settings.button_link }}" class="story" title="{{ block.settings.button_label | escape }}">
+                <a href="{{ block.settings.button_link }}" class="story" tabindex="-1" title="{{ block.settings.button_label | escape }}">
                 {%- endif -%}
                 {% if block_image != blank %}
                     <div class="story__thumb">
