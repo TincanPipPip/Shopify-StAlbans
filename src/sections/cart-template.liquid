@@ -91,11 +91,11 @@
                 {%- endif -%}
 
                 <div data-cart-item-price>
-                  <dl data-cart-item-price-list>
+                  <div data-cart-item-price-list>
                     {%- comment -%}
                       Markup template for discount item
                     {%- endcomment -%}
-                    <div {% unless hasDiscount %}class="hide" {% endunless %}data-cart-item-discounted-price-group>
+                    <dl {% unless hasDiscount %}class="hide" {% endunless %}data-cart-item-discounted-price-group>
                       <dt>
                         <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                       </dt>
@@ -108,24 +108,24 @@
                       <dd>
                         <span class="order-discount" data-cart-item-final-price>{{ item.final_price | money }}</span>
                       </dd>
-                    </div>
+                    </dl>
 
                     {%- comment -%}
                       Markup template for regular price item
                     {%- endcomment -%}
-                    <div {% if hasDiscount %}class="hide" {% endif %}data-cart-item-regular-price-group>
+                    <dl {% if hasDiscount %}class="hide" {% endif %}data-cart-item-regular-price-group>
                       <dt>
                         <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                       </dt>
                       <dd data-cart-item-regular-price>
                         {{ item.original_price | money }}
                       </dd>
-                    </div>
+                    </dl>
 
                     {%- comment -%}
                       Markup template for unit price
                     {%- endcomment -%}
-                    <div {% unless item.unit_price_measurement %}class="hide" {% endunless %}data-unit-price-group>
+                    <dl {% unless item.unit_price_measurement %}class="hide" {% endunless %}data-unit-price-group>
                       <dt>
                         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
                       </dt>
@@ -144,8 +144,8 @@
                           <span data-unit-price>{{ item.unit_price | money }}</span>{{- unit_price_separator -}}<span data-unit-price-base-unit>{{- unit_price_base_unit -}}</span>
                         </span>
                       </dd>
-                    </div>
-                  </dl>
+                    </dl>
+                  </div>
                 </div>
 
                 {%- assign itemDiscounts = 'template ' | split: ' ' -%}
