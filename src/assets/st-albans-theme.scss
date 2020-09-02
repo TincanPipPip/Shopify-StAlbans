@@ -83,21 +83,21 @@
 @mixin btn {
   @include caps;
   border: 1px solid $purple;
-  padding: 18px 0 18px 25px;
+  padding: 18px 20px 18px;
   display: inline-block;
   color: $purple;
   line-height: 1;
 
   &::before,
   &::after {
-    content: ' ';
+    content: " ";
     transition: all 0.2s ease-out;
   }
 
   span {
     @include bg-img;
     display: inline-block;
-    background-image: url('../images/arrow-purple.svg');
+    background-image: url("arrow-purple.svg");
     height: 10px;
     width: 15px;
     margin: 0 15px 0 10px;
@@ -108,7 +108,7 @@
     color: #fff;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
   }
 }
@@ -148,7 +148,7 @@
   }
 
   span {
-    background-image: url('../images/arrow-white.svg');
+    background-image: url("arrow-white.svg");
     margin-left: 15px;
   }
 
@@ -172,7 +172,7 @@
   color: $tan;
 
   span {
-    background-image: url('../images/arrow-gold.svg');
+    background-image: url("arrow-gold.svg");
   }
 
   &:hover {
@@ -181,13 +181,13 @@
     border-color: $gold;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
   }
 }
 
 @mixin bord {
-  content: ' ';
+  content: " ";
   display: block;
   height: 5px;
   width: 100px;
@@ -196,7 +196,7 @@
 }
 
 @mixin tri {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 0;
@@ -219,7 +219,7 @@
   font-variant: small-caps;
   font-size: 18px;
   line-height: 20px;
-  background-image: url('../images/marker-beige-sm.svg');
+  background-image: url("marker-beige-sm.svg");
   background-position: left center;
   background-size: 10px;
   padding-left: $padding/2;
@@ -251,19 +251,15 @@ $bump: 0.9375em;
 /* --- Fonts --- */
 
 @font-face {
-  font-family: 'KfrW-Rg';
-  src: url('../fonts/kfrw-rg.eot');
-  src: url('../fonts/kfrw-rg.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-rg.woff2') format('woff2'), url('../fonts/kfrw-v.woff') format('woff'),
-    url('../fonts/kfrw-rg.ttf') format('truetype');
+  font-family: "KfrW-Rg";
+  src: url("kfrw-rg.woff2") format("woff2"), url("kfrw-rg.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'KfrW-Bd';
-  src: url('../fonts/kfrw-bd.eot');
-  src: url('../fonts/kfrw-bd.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-bd.woff2') format('woff2'),
-    url('../fonts/kfrw-bd.woff') format('woff'), url('../fonts/kfrw-bd.ttf') format('truetype');
+  font-family: "KfrW-Bd";
+  src: url("kfrw-bd.woff2") format("woff2"), url("kfrw-bd.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -271,13 +267,13 @@ $bump: 0.9375em;
 @mixin font-body {
   font-size: 19px;
   line-height: 32px;
-  font-family: 'KfrW-Rg';
-  font-feature-settings: 'lnum';
+  font-family: "KfrW-Rg";
+  font-feature-settings: "lnum";
 }
 
 @mixin font-bold {
   font-weight: normal;
-  font-family: 'KfrW-Bd';
+  font-family: "KfrW-Bd";
 }
 
 @mixin font-title {
@@ -323,26 +319,26 @@ $grid-wide: 1366px;
 $grid-wider: 1450px;
 $grid-xwide: 1500px;
 
-$vsmall: 'vsmall';
-$small: 'small';
-$sm-mobile: 'sm-mobile';
-$mobile: 'mobile';
-$tabletport: 'tabletport';
-$tabletland: 'tabletland';
-$nav: 'nav';
-$wide: 'wide';
-$wider: 'wider';
-$xwide: 'xwide';
-$xxwide: '$xxwide';
+$vsmall: "vsmall";
+$small: "small";
+$sm-mobile: "sm-mobile";
+$mobile: "mobile";
+$tabletport: "tabletport";
+$tabletland: "tabletland";
+$nav: "nav";
+$wide: "wide";
+$wider: "wider";
+$xwide: "xwide";
+$xxwide: "$xxwide";
 
 // $small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
 
 /*============================================================================
   Generate breakpoint-specific column widths and push classes
@@ -352,7 +348,6 @@ $widescreen: 'widescreen';
 $grid-breakpoint-has-widths: ($small, $medium-up);
 $grid-breakpoint-has-push: ($small, $medium-up);
 
-
 /*============================================================================
   #Grid
 ==============================================================================*/
@@ -361,27 +356,26 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 // You can use these in the media-query mixin.
 $grid-breakpoints: (
   // $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})',
-
-  $vsmall '(max-width: #{$grid-vsmall - 1})',
-  $small '(max-width: #{$grid-small - 1})',
-  $sm-mobile '(max-width: #{$grid-sm-mobile - 1})',
-  $mobile '(max-width: #{$grid-mobile - 1})',
-  $tabletport '(max-width: #{$grid-tabletport - 1})',
-  $tabletland '(max-width: #{$grid-tabletland - 1})',
-  $nav '(max-width: #{$grid-nav - 1})',
-  $wide '(max-width: #{$grid-wide - 1})',
-  $wider '(max-width: #{$grid-wider - 1})',
-  $xwide '(max-width: #{$grid-xwide - 1})',
-  $xxwide '(min-width: #{$grid-xwide - 1})'
+    $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+  $medium-down "(max-width: #{$grid-large - 1})",
+  $medium-up "(min-width: #{$grid-medium})",
+  $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+  $large-down "(max-width: #{$grid-widescreen - 1})",
+  $large-up "(min-width: #{$grid-large})",
+  $widescreen "(min-width: #{$grid-widescreen})",
+  $vsmall "(max-width: #{$grid-vsmall - 1})",
+  $small "(max-width: #{$grid-small - 1})",
+  $sm-mobile "(max-width: #{$grid-sm-mobile - 1})",
+  $mobile "(max-width: #{$grid-mobile - 1})",
+  $tabletport "(max-width: #{$grid-tabletport - 1})",
+  $tabletland "(max-width: #{$grid-tabletland - 1})",
+  $nav "(max-width: #{$grid-nav - 1})",
+  $wide "(max-width: #{$grid-wide - 1})",
+  $wider "(max-width: #{$grid-wider - 1})",
+  $xwide "(max-width: #{$grid-xwide - 1})",
+  $xxwide "(min-width: #{$grid-xwide - 1})"
 );
-  
+
 // --------------------------------
 //					 GLOBAL CLASSES
 // --------------------------------
@@ -397,7 +391,7 @@ $grid-breakpoints: (
 
   &:before,
   &:after {
-    content: ' ';
+    content: " ";
     display: table;
   }
   &:after {
@@ -450,7 +444,7 @@ $grid-breakpoints: (
   display: block;
   height: 30px;
   width: 30px;
-  background-image: url('../images/emClose.png');
+  background-image: url("emClose.png");
   cursor: pointer;
   transition: opacity 0.2s ease-out;
 
@@ -478,33 +472,33 @@ $grid-breakpoints: (
 
 // Forms
 input,
-input[type='text'],
-input[type='password'],
-input[type='email'],
-input[type='submit'],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"],
 textarea,
 select {
   @include font-body;
-  color: $text;
+  color: $gold;
   resize: none;
   padding: 0.5em 1em;
   -webkit-border-radius: 0px;
   border-radius: 0;
   outline: 0;
-  border: 1px solid $text;
+  border: 1px solid $gold;
   transition: all 0.2s ease-in-out;
 }
 
 .form-actions input,
-input[type='submit'] {
+input[type="submit"] {
   cursor: pointer;
 }
 
-input[type='search'],
-input[type='text'],
-input[type='password'],
-input[type='email'],
-input[type='submit'] {
+input[type="search"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
   -webkit-appearance: none;
 }
 
@@ -514,7 +508,6 @@ input[type='submit'] {
 
   li {
     vertical-align: top;
-    margin-bottom: 6%;
     margin-right: 6%;
     float: left;
     position: relative;
@@ -869,6 +862,7 @@ a {
 
   &.alt {
     @include btn-alt;
+    background-color: $bg;
   }
 
   &.disabled {
@@ -905,7 +899,7 @@ img {
 
 .header__logo {
   @include bg-img;
-  background-image: url('../images/logo-blue.svg');
+  background-image: url("logo-blue.svg");
   background-position: left center;
   display: block;
   padding-left: 90px;
@@ -1071,7 +1065,7 @@ img {
       margin: $padding/2 $padding/2 0;
     }
 
-    input[type='search'] {
+    input[type="search"] {
       box-sizing: border-box;
       display: block;
       background: transparent;
@@ -1082,14 +1076,14 @@ img {
       padding: $padding/2 0;
     }
 
-    input[type='submit'] {
+    input[type="submit"] {
       @include rm-text;
       @include bg-img;
       position: absolute;
       top: $padding/2;
       right: $padding;
       background-color: transparent;
-      background-image: url('../images/search-white.svg');
+      background-image: url("search-white.svg");
       background-size: 20px;
       padding: $padding/2 $padding;
       border: 0;
@@ -1115,7 +1109,7 @@ img {
   border-left: 1px solid transparentize($black, 0.9);
 
   @include media-query($xxwide) {
-    position: absolute;
+    position: relative;
     top: 0;
     right: 0;
   }
@@ -1131,13 +1125,13 @@ img {
 }
 
 .block-link__search {
-  background-image: url('../images/search-purple.svg');
+  background-image: url("search-purple.svg");
   background-size: 20px;
   background-position: center center;
   margin-left: $padding/2;
 
   &:hover {
-    background-image: url('../images/search-gold.svg');
+    background-image: url("search-gold.svg");
   }
 
   @include media-query($mobile) {
@@ -1170,7 +1164,7 @@ img {
     background: $text;
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     border-radius: 2px;
     transition: all 0.2s ease-in-out;
   }
@@ -1204,7 +1198,8 @@ img {
     display: block;
   }
 }
-.nav__toggle--active {
+.nav__toggle--active,
+.mobile-nav--close {
   @include media-query($mobile) {
     background: $purple;
     height: 60px;
@@ -1300,7 +1295,7 @@ img {
     box-sizing: border-box;
   }
 
-  input[type='search'] {
+  input[type="search"] {
     width: 100%;
     border-color: $bg-alt;
 
@@ -1309,10 +1304,10 @@ img {
     }
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     @include rm-text;
     @include bg-img;
-    background-image: url('../images/search-white.svg');
+    background-image: url("search-white.svg");
     background-size: 20px;
     background-color: $purple;
     position: absolute;
@@ -1384,7 +1379,8 @@ img {
   }
 
   &.banner--opacity-25 {
-    img {
+    img,
+    .hero {
       opacity: 0.25;
 
       @include media-query($mobile) {
@@ -1393,7 +1389,8 @@ img {
     }
   }
   &.banner--opacity-50 {
-    img {
+    img,
+    .hero {
       opacity: 0.5;
 
       @include media-query($mobile) {
@@ -1402,7 +1399,8 @@ img {
     }
   }
   &.banner--opacity-75 {
-    img {
+    img,
+    .hero {
       opacity: 0.75;
 
       @include media-query($mobile) {
@@ -1411,7 +1409,8 @@ img {
     }
   }
 
-  img {
+  img,
+  .hero {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1486,7 +1485,7 @@ img {
   display: block;
   height: 40px;
   width: 40px;
-  background-image: url('../images/image-credit.svg');
+  background-image: url("image-credit.svg");
   background-size: 20px;
   z-index: 3;
   cursor: help !important;
@@ -1585,7 +1584,7 @@ img {
     margin-left: $padding;
 
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: $padding/1.5;
       height: 1px;
@@ -1618,7 +1617,7 @@ img {
         align-items: center;
 
         &::before {
-          content: '';
+          content: "";
           display: block;
           width: $padding;
           height: 1px;
@@ -1734,21 +1733,21 @@ img {
   background-size: 25px;
 
   &.social--twitter {
-    background-image: url('../images/social/social-twitter.svg');
+    background-image: url("social-twitter.svg");
   }
 
   &.social--facebook {
-    background-image: url('../images/social/social-facebook.svg');
+    background-image: url("social-facebook.svg");
     background-size: auto 22px;
   }
 
   &.social--instagram {
-    background-image: url('../images/social/social-instagram.svg');
+    background-image: url("social-instagram.svg");
     background-size: 20px;
   }
 
   &.social--youtube {
-    background-image: url('../images/social/social-youtube.svg');
+    background-image: url("social-youtube.svg");
   }
 
   &:hover {
@@ -1761,7 +1760,7 @@ img {
   @include caps;
   padding-left: $padding;
   font-size: 14px;
-  background-image: url('../images/calendar-white.svg');
+  background-image: url("calendar-white.svg");
   background-position: left center;
   background-size: $padding/2;
   line-height: 1.2;
@@ -1883,9 +1882,9 @@ img {
 
         &::before {
           @include bg-img;
-          content: '';
+          content: "";
           position: absolute;
-          background-image: url('../images/eye-view.svg');
+          background-image: url("eye-view.svg");
           background-size: 30px;
           background-color: transparentize($purple, 0.5);
           top: 0;
@@ -1910,7 +1909,7 @@ img {
   }
 
   .dates {
-    background-image: url('../images/calendar-dark.svg');
+    background-image: url("calendar-dark.svg");
     color: $purple;
     transition: color 0.2s ease-out;
   }
@@ -2037,7 +2036,7 @@ img {
       color: #fff;
 
       span {
-        background-image: url('../images/arrow-white.svg');
+        background-image: url("arrow-white.svg");
       }
 
       &.book {
@@ -2072,7 +2071,8 @@ img {
 }
 
 // CT specific
-.ct__homepage {
+.ct__homepage,
+.template-index {
   border-top: 20px solid #fff;
 
   &.user-logged-in {
@@ -2102,7 +2102,7 @@ img {
 
     .header__logo {
       color: #fff;
-      background-image: url('../images/logo-white.svg');
+      background-image: url("logo-white.svg");
       top: 25px;
       left: 25px;
 
@@ -2153,8 +2153,13 @@ img {
       right: 0;
     }
 
+    @include media-query($xxwide) {
+      top: 0;
+      right: 0;
+    }
+
     &.block-link__search {
-      background-image: url('../images/search-white.svg');
+      background-image: url("search-white.svg");
 
       &:hover {
         opacity: 0.7;
@@ -2177,7 +2182,8 @@ img {
       }
     }
 
-    &.nav__toggle--active {
+    &.nav__toggle--active,
+    &.mobile-nav--close {
       background: #fff;
 
       @include media-query($mobile) {
@@ -2234,20 +2240,20 @@ img {
     }
 
     .featured {
-      font-size: 108px;
+      font-size: 78px;
       line-height: 104px;
 
       @include media-query($xwide) {
-        font-size: 80px;
+        font-size: 50px;
         line-height: 1;
       }
 
       @include media-query($tabletland) {
-        font-size: 60px;
+        font-size: 40px;
       }
 
       @include media-query($small) {
-        font-size: 50px;
+        font-size: 40px;
       }
 
       @include media-query($mobile) {
@@ -2292,9 +2298,9 @@ img {
 
     &::before {
       @include bg-img;
-      background-image: url('../images/triangle-home-big.svg');
+      background-image: url("triangle-home-big.svg");
       background-position: center top;
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -2319,13 +2325,18 @@ img {
 
 .section-whatson {
   @include bg-img;
-  background-image: url('../images/triangle-home-sm-up.svg');
+  background-image: url("triangle-home-sm-up.svg");
   background-position: center bottom;
   background-size: 25%;
   padding: $padding * 3 0 $padding * 4;
 
   @include media-query($tabletland) {
     padding: $padding * 2 0 $padding * 2;
+  }
+
+  .template-index & {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .view__footer {
@@ -2351,13 +2362,13 @@ img {
   &::before,
   &::after {
     @include bg-img;
-    content: '';
+    content: "";
     display: block;
-    background-image: url('../images/triangle-home-sm-up.svg');
+    background-image: url("triangle-home-sm-up.svg");
     width: 200px;
     height: 100px;
 
-    @include media-query('>1750px') {
+    @include media-query(">1750px") {
       width: 300px;
       height: 150px;
     }
@@ -2453,7 +2464,7 @@ img {
     text-align: center;
 
     &::after {
-      content: '';
+      content: "";
       display: inline-block;
       height: 7px;
       width: 2px;
@@ -2499,40 +2510,52 @@ img {
   }
 }
 
+.intro-h4 {
+  display: block;
+  #shopify-section-feature-row & {
+    display: none;
+  }
+}
+
 .welcome__content {
-  @include bg-img;
-  background-size: cover;
-  position: absolute;
-  background-color: $purple;
-  padding: $padding * 2;
-  color: #fff;
-  bottom: -$padding * 3;
-  right: 0;
-  max-width: 400px;
+  display: none;
 
-  @include media-query($tabletland) {
-    padding: $padding;
-    max-width: 325px;
-  }
-
-  @include media-query($tabletport) {
-    position: relative;
-    bottom: 0;
-    max-width: 100%;
-    margin-bottom: $padding;
-    padding: $padding/3;
-  }
-
-  &::after {
-    content: '';
-    background: $purple;
-    opacity: 0.9;
+  #shopify-section-feature-row & {
+    @include bg-img;
+    background-size: cover;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    background-color: $purple;
+    padding: $padding * 2;
+    color: #fff;
+    bottom: -$padding * 3;
+    right: 0;
+    max-width: 400px;
+    display: block;
+
+    @include media-query($tabletland) {
+      padding: $padding;
+      max-width: 325px;
+    }
+
+    @include media-query($tabletport) {
+      position: relative;
+      bottom: 0;
+      max-width: 100%;
+      margin-bottom: $padding;
+      padding: $padding/3;
+    }
+
+    &::after {
+      content: "";
+      background: $purple;
+      opacity: 0.9;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
   }
 }
 
@@ -2558,7 +2581,7 @@ img {
     border-color: #fff;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
 
     &:hover {
@@ -2566,15 +2589,16 @@ img {
       color: $purple;
 
       span {
-        background-image: url('../images/arrow-purple.svg');
+        background-image: url("arrow-purple.svg");
       }
     }
   }
 }
 
-.section-stories {
+.section-stories,
+.index-section--slideshow {
   @include bg-img;
-  background-image: url('../images/triangle-home-sm-down.svg');
+  background-image: url("triangle-home-sm-down.svg");
   background-position: center top;
   background-size: 25%;
   background-color: $beige-lt;
@@ -2706,7 +2730,7 @@ img {
       }
 
       span {
-        background-image: url('../images/arrow-white.svg');
+        background-image: url("arrow-white.svg");
       }
     }
 
@@ -2937,11 +2961,11 @@ img {
 
   .chosen-container-single .chosen-single,
   select {
-    background-image: url('../images/marker-lilac.svg');
+    background-image: url("marker-lilac.svg");
 
     & > div {
       @include bg-img;
-      background-image: url('../images/triangle-down.png');
+      background-image: url("triangle-down.png");
       background-size: 14px;
       right: 13px;
     }
@@ -2949,24 +2973,24 @@ img {
 
   .form-item-audience .chosen-container-single .chosen-single,
   .form-item-audience select {
-    background-image: url('../images/audience-lilac.svg');
+    background-image: url("audience-lilac.svg");
   }
 
   .form-item-topic .chosen-container-single .chosen-single,
   .form-item-topic select {
-    background-image: url('../images/topic-lilac.svg');
+    background-image: url("topic-lilac.svg");
   }
 
   .form-item-years .chosen-container-single .chosen-single,
   .form-item-years select {
-    background-image: url('../images/calendar-lilac.svg');
+    background-image: url("calendar-lilac.svg");
   }
 
   .chosen-container-active .chosen-single {
     border-color: $tan;
 
     & > div {
-      background-image: url('../images/triangle-up.png');
+      background-image: url("triangle-up.png");
     }
   }
 
@@ -2999,7 +3023,7 @@ img {
   }
 
   .filter-btn {
-    background-image: url('../images/calendar-lilac.svg');
+    background-image: url("calendar-lilac.svg");
     margin-left: $padding/2;
     text-decoration: none;
 
@@ -3014,12 +3038,12 @@ img {
 
     &::after {
       @include bg-img;
-      content: '';
+      content: "";
       display: inline-block;
       float: right;
       height: 50px;
       width: 14px;
-      background-image: url('../images/triangle-down.png');
+      background-image: url("triangle-down.png");
 
       @include media-query($small) {
         height: $padding;
@@ -3040,7 +3064,6 @@ img {
     }
   }
 }
-
 
 .filters--archive {
   display: flex;
@@ -3070,6 +3093,7 @@ img {
 
 // Footer
 .footer {
+  margin-top: $section-spacing;
   padding: $padding * 3 0 $padding;
   background: $purple;
   color: $grey-lt;
@@ -3118,7 +3142,7 @@ img {
     margin-bottom: $padding;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
 
     &:hover {
@@ -3126,7 +3150,7 @@ img {
       color: $purple;
 
       span {
-        background-image: url('../images/arrow-purple.svg');
+        background-image: url("arrow-purple.svg");
       }
     }
   }
@@ -3148,6 +3172,49 @@ img {
     .large-3 {
       text-align: left;
     }
+  }
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: $color-btn-primary;
+  border-color: $gold;
+
+  &:not([disabled]):hover,
+  &:focus {
+    background-color: transparent;
+    color: $color-btn-primary-focus;
+  }
+}
+
+.btn--secondary-accent {
+  background-color: $color-body;
+  color: $color-btn-primary;
+  border-color: $gold;
+
+  &:not([disabled]):hover,
+  &:focus {
+    background-color: $color-body;
+    color: $color-btn-primary-focus;
+  }
+}
+
+.btn--small {
+  padding: 8px 10px;
+  font-size: em(12);
+  line-height: 1;
+}
+
+.btn--tertiary {
+  background-color: transparent;
+  color: $color-small-button-text-border;
+  border-color: $color-small-button-text-border;
+
+  &:not([disabled]):hover,
+  &:focus {
+    background-color: transparent;
+    color: $color-small-button-text-border-focus;
+    border-color: $color-small-button-text-border-focus;
   }
 }
 
@@ -3221,7 +3288,7 @@ address {
   }
 
   &.partner--council {
-    background-image: url('../images/logo-council.svg');
+    background-image: url("logo-council.svg");
     background-position: left center;
 
     @include media-query($sm-mobile) {
@@ -3230,11 +3297,11 @@ address {
   }
 
   &.partner--trust {
-    background-image: url('../images/logo-samg-trust.svg');
+    background-image: url("logo-samg-trust.svg");
   }
 
   &.partner--hlf {
-    background-image: url('../images/logo-hlf.svg');
+    background-image: url("logo-hlf.svg");
     background-position: right center;
 
     @include media-query($sm-mobile) {
@@ -3279,7 +3346,7 @@ address {
         text-decoration: none;
 
         &::after {
-          content: ' • ';
+          content: " • ";
           margin: 0 5px;
         }
       }
@@ -3355,7 +3422,7 @@ address {
 
       .glyphicon {
         @include bg-img;
-        background-image: url('../images/triangle-home-sm-down.svg');
+        background-image: url("triangle-home-sm-down.svg");
         background-size: 25px;
         transition: all 0.2s ease-out;
         display: inline-block;
@@ -3447,11 +3514,11 @@ address {
     display: block;
   }
 
-  input[type='text'],
-  input[type='tel'],
-  input[type='password'],
-  input[type='email'],
-  input[type='submit'],
+  input[type="text"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="email"],
+  input[type="submit"],
   textarea,
   select,
   .chosen-single {
@@ -3467,7 +3534,7 @@ address {
     }
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     @include btn-book;
     padding-right: 25px;
   }
@@ -3518,7 +3585,7 @@ address {
   select {
     & > div {
       @include bg-img;
-      background-image: url('../images/triangle-down.png');
+      background-image: url("triangle-down.png");
       background-size: 14px;
       right: 13px;
     }
@@ -3528,7 +3595,7 @@ address {
     border-color: $tan;
 
     & > div {
-      background-image: url('../images/triangle-up.png');
+      background-image: url("triangle-up.png");
     }
   }
 
@@ -3588,7 +3655,7 @@ address {
 
   div.mce_inline_error {
     @include font-body;
-    font-family: 'KfrW-Rg' !important;
+    font-family: "KfrW-Rg" !important;
     background: $purple !important;
     font-weight: normal !important;
   }
@@ -3605,6 +3672,90 @@ address {
 
     &:hover {
       background: $purple;
+    }
+  }
+}
+
+/*================ Force an input/button to look like a text link ================*/
+.text-link {
+  display: inline;
+  border: 0 none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-link--accent {
+  color: $gold;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+
+  &:not([disabled]):hover,
+  &:focus {
+    color: $color-btn-primary-focus;
+  }
+}
+
+.video-control__play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  width: $video-button-wrapper-size;
+  height: $video-button-wrapper-size;
+  border-radius: $video-button-wrapper-size / 2;
+  position: relative;
+  margin: 0 auto;
+  padding: 5px;
+  pointer-events: none;
+
+  .video-background-wrapper & {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  .icon {
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+  }
+
+  .video-is-loaded & {
+    pointer-events: auto;
+
+    .icon {
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .video-is-playing & {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.btn {
+  &.alt {
+    &.no-arrow {
+      &:hover {
+        span {
+          background-image: none;
+          margin: 0 0px 0 10px;
+          width: 100%;
+        }
+      }
+      span {
+        background-image: none;
+        margin: 0 0px 0 10px;
+        width: 100%;
+        &:hover {
+          background-image: none;
+        }
+      }
     }
   }
 }

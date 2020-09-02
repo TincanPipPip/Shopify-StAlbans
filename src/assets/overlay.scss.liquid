@@ -82,21 +82,21 @@
 @mixin btn {
   @include caps;
   border: 1px solid $purple;
-  padding: 18px 0 18px 25px;
+  padding: 18px 20px 18px;
   display: inline-block;
   color: $purple;
   line-height: 1;
 
   &::before,
   &::after {
-    content: ' ';
+    content: " ";
     transition: all 0.2s ease-out;
   }
 
   span {
     @include bg-img;
     display: inline-block;
-    background-image: url('../images/arrow-purple.svg');
+    background-image: url("arrow-purple.svg");
     height: 10px;
     width: 15px;
     margin: 0 15px 0 10px;
@@ -107,7 +107,7 @@
     color: #fff;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
   }
 }
@@ -147,7 +147,7 @@
   }
 
   span {
-    background-image: url('../images/arrow-white.svg');
+    background-image: url("arrow-white.svg");
     margin-left: 15px;
   }
 
@@ -171,7 +171,7 @@
   color: $tan;
 
   span {
-    background-image: url('../images/arrow-gold.svg');
+    background-image: url("arrow-gold.svg");
   }
 
   &:hover {
@@ -180,13 +180,13 @@
     border-color: $gold;
 
     span {
-      background-image: url('../images/arrow-white.svg');
+      background-image: url("arrow-white.svg");
     }
   }
 }
 
 @mixin bord {
-  content: ' ';
+  content: " ";
   display: block;
   height: 5px;
   width: 100px;
@@ -195,7 +195,7 @@
 }
 
 @mixin tri {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 0;
@@ -218,7 +218,7 @@
   font-variant: small-caps;
   font-size: 18px;
   line-height: 20px;
-  background-image: url('../images/marker-beige-sm.svg');
+  background-image: url("marker-beige-sm.svg");
   background-position: left center;
   background-size: 10px;
   padding-left: $padding/2;
@@ -250,19 +250,15 @@ $bump: 0.9375em;
 /* --- Fonts --- */
 
 @font-face {
-  font-family: 'KfrW-Rg';
-  src: url('../fonts/kfrw-rg.eot');
-  src: url('../fonts/kfrw-rg.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-rg.woff2') format('woff2'), url('../fonts/kfrw-v.woff') format('woff'),
-    url('../fonts/kfrw-rg.ttf') format('truetype');
+  font-family: "KfrW-Rg";
+  src: url("kfrw-rg.woff2") format("woff2"), url("kfrw-rg.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'KfrW-Bd';
-  src: url('../fonts/kfrw-bd.eot');
-  src: url('../fonts/kfrw-bd.eot?#iefix') format('embedded-opentype'), url('../fonts/kfrw-bd.woff2') format('woff2'),
-    url('../fonts/kfrw-bd.woff') format('woff'), url('../fonts/kfrw-bd.ttf') format('truetype');
+  font-family: "KfrW-Bd";
+  src: url("kfrw-bd.woff2") format("woff2"), url("kfrw-bd.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -270,13 +266,13 @@ $bump: 0.9375em;
 @mixin font-body {
   font-size: 19px;
   line-height: 32px;
-  font-family: 'KfrW-Rg';
-  font-feature-settings: 'lnum';
+  font-family: "KfrW-Rg";
+  font-feature-settings: "lnum";
 }
 
 @mixin font-bold {
   font-weight: normal;
-  font-family: 'KfrW-Bd';
+  font-family: "KfrW-Bd";
 }
 
 @mixin font-title {
@@ -322,26 +318,26 @@ $grid-wide: 1366px;
 $grid-wider: 1450px;
 $grid-xwide: 1500px;
 
-$vsmall: 'vsmall';
-$small: 'small';
-$sm-mobile: 'sm-mobile';
-$mobile: 'mobile';
-$tabletport: 'tabletport';
-$tabletland: 'tabletland';
-$nav: 'nav';
-$wide: 'wide';
-$wider: 'wider';
-$xwide: 'xwide';
-$xxwide: '$xxwide';
+$vsmall: "vsmall";
+$small: "small";
+$sm-mobile: "sm-mobile";
+$mobile: "mobile";
+$tabletport: "tabletport";
+$tabletland: "tabletland";
+$nav: "nav";
+$wide: "wide";
+$wider: "wider";
+$xwide: "xwide";
+$xxwide: "$xxwide";
 
 // $small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
 
 /*============================================================================
   Generate breakpoint-specific column widths and push classes
@@ -351,7 +347,6 @@ $widescreen: 'widescreen';
 $grid-breakpoint-has-widths: ($small, $medium-up);
 $grid-breakpoint-has-push: ($small, $medium-up);
 
-
 /*============================================================================
   #Grid
 ==============================================================================*/
@@ -360,27 +355,26 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 // You can use these in the media-query mixin.
 $grid-breakpoints: (
   // $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})',
-
-  $vsmall '(max-width: #{$grid-vsmall - 1})',
-  $small '(max-width: #{$grid-small - 1})',
-  $sm-mobile '(max-width: #{$grid-sm-mobile - 1})',
-  $mobile '(max-width: #{$grid-mobile - 1})',
-  $tabletport '(max-width: #{$grid-tabletport - 1})',
-  $tabletland '(max-width: #{$grid-tabletland - 1})',
-  $nav '(max-width: #{$grid-nav - 1})',
-  $wide '(max-width: #{$grid-wide - 1})',
-  $wider '(max-width: #{$grid-wider - 1})',
-  $xwide '(max-width: #{$grid-xwide - 1})',
-  $xxwide '(min-width: #{$grid-xwide - 1})'
+    $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+  $medium-down "(max-width: #{$grid-large - 1})",
+  $medium-up "(min-width: #{$grid-medium})",
+  $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+  $large-down "(max-width: #{$grid-widescreen - 1})",
+  $large-up "(min-width: #{$grid-large})",
+  $widescreen "(min-width: #{$grid-widescreen})",
+  $vsmall "(max-width: #{$grid-vsmall - 1})",
+  $small "(max-width: #{$grid-small - 1})",
+  $sm-mobile "(max-width: #{$grid-sm-mobile - 1})",
+  $mobile "(max-width: #{$grid-mobile - 1})",
+  $tabletport "(max-width: #{$grid-tabletport - 1})",
+  $tabletland "(max-width: #{$grid-tabletland - 1})",
+  $nav "(max-width: #{$grid-nav - 1})",
+  $wide "(max-width: #{$grid-wide - 1})",
+  $wider "(max-width: #{$grid-wider - 1})",
+  $xwide "(max-width: #{$grid-xwide - 1})",
+  $xxwide "(min-width: #{$grid-xwide - 1})"
 );
-  
+
 
 // --------------------------------
 //					   		OVERLAY
@@ -413,7 +407,7 @@ $grid-breakpoints: (
   display: block;
   height: 30px;
   width: 30px;
-  background-image: url('../images/emClose.png');
+  background-image: url("emClose.png");
   background-size: 20px;
   cursor: pointer;
   transition: opacity 0.2s ease-out;
@@ -439,7 +433,7 @@ $grid-breakpoints: (
     width: 90%;
   }
 
-  @include media('<=small') {
+  @include media("<=small") {
     padding: 15px;
 
     .overlay__close {
