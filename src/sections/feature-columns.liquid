@@ -27,7 +27,21 @@
                                             <div class="node node__event node--teaser clearfix">
                                                 <div class="teaser">
                                                     {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-                                                        <a href="{{ block.settings.button_link }}" class="teaser__thumb">
+                                                        {%- capture ariaLabel -%}
+
+                                                            {{- block.settings.button_label -}}
+                                                            {%- if block.settings.button_link.type == 'frontpage_link' -%}
+                                                                :
+                                                                {{ 'homepage.general.title' | t -}}
+                                                            {%- elsif block.settings.button_link.type == 'catalog_link' -%}
+                                                                :
+                                                                {{ 'collections.catalog.title' | t -}}
+                                                            {%- elsif block.settings.button_link.object.title -%}
+                                                                :
+                                                                {{ block.settings.button_link.object.title -}}
+                                                            {%- endif -%}
+                                                        {%- endcapture -%}
+                                                        <a href="{{ block.settings.button_link }}" aria-label="{{ ariaLabel | escape }}" class="teaser__thumb">
                                                         {% endif %}
 
                                                         <img class="image-style-sa-teaser" src="{{ block.settings.image | img_url: '300x300' }}" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ block.settings.image.aspect_ratio }}" data-sizes="auto" alt="{{ block.settings.image.alt | escape }}">
@@ -50,20 +64,6 @@
                                                         {% endif %}
 
                                                         {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-                                                            {%- capture ariaLabel -%}
-                                                                {{- block.settings.button_label -}}
-                                                                {%- if block.settings.button_link.type == 'frontpage_link' -%}
-                                                                    :
-                                                                    {{ 'homepage.general.title' | t -}}
-                                                                {%- elsif block.settings.button_link.type == 'catalog_link' -%}
-                                                                    :
-                                                                    {{ 'collections.catalog.title' | t -}}
-                                                                {%- elsif block.settings.button_link.object.title -%}
-                                                                    :
-                                                                    {{ block.settings.button_link.object.title -}}
-                                                                {%- endif -%}
-                                                            {%- endcapture -%}
-
                                                             <a href="{{ block.settings.button_link }}" class="btn book" aria-label="{{ ariaLabel | escape }}" target="_blank">
                                                                 {{- block.settings.button_label | escape -}}
                                                                 <span></span>
